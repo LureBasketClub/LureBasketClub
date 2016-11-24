@@ -1,0 +1,301 @@
+@media (max-width: 700px) {
+  .post-type-archive-matchs #container h2 {
+    font-size: 2.0rem;
+    font-weight: normal;
+    padding: 80px 0 0 20px;
+    margin: 0;
+  }
+  .post-type-archive-matchs #container h5 {
+    margin: 20px 0 0 20px;
+    font-weight: normal;
+    font-size: 1.6rem;
+  }
+  .post-type-archive-matchs #container select {
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-left: 10px;
+    background-color: #f2f2f2;
+    border: none;
+    width: calc(100% - 40px);
+    height: 2em;
+  }
+  .post-type-archive-matchs #liens-externes a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px 20px 0 20px;
+    padding: 0 10px;
+    background-color: #f2f2f2;
+    width: calc(100% - 60px);
+    height: 2em;
+    line-height: 2em;
+    color: black;
+  }
+  .post-type-archive-matchs #liens-externes a svg {
+    text-align: right;
+    height: 70%;
+  }
+  .post-type-archive-matchs .date-match {
+    font-size: 1.6rem;
+    padding: 0 0 0 20px;
+    font-weight: normal;
+    margin: 25px 0 10px 0;
+  }
+  .post-type-archive-matchs .date-match::first-letter {
+    text-transform: uppercase;
+  }
+  .post-type-archive-matchs .match {
+    margin: 0 20px 20px 20px;
+    border: solid 1px #f2f2f2;
+    border-radius: 4px;
+    display: flex;
+    padding: 10px;
+  }
+  .post-type-archive-matchs .match .equipe {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 33%;
+  }
+  .post-type-archive-matchs .match .equipe span {
+    margin-top: 5px;
+  }
+  .post-type-archive-matchs .match .equipe svg {
+    width: 25px;
+  }
+  .post-type-archive-matchs .match .equipe .nom-equipe {
+    font-size: 1.8rem;
+  }
+  .post-type-archive-matchs .match .horaire {
+    width: 33%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-left: solid 1px #f2f2f2;
+    border-right: solid 1px #f2f2f2;
+  }
+  .post-type-archive-matchs .match .horaire time {
+    font-size: 2.4rem;
+  }
+  .post-type-archive-matchs .match .horaire .categorie {
+    font-size: 1.4rem;
+  }
+}
+@media (min-width: 700px) and (max-width: 900px) {
+  .post-type-archive-matchs #container {
+    padding: 0 50px;
+  }
+  .post-type-archive-matchs #container h2 {
+    font-size: 3.0rem;
+    font-weight: normal;
+    padding: 80px 0 0 20px;
+    margin: 0;
+  }
+  .post-type-archive-matchs #container h5 {
+    margin: 20px 0 0 20px;
+    font-weight: normal;
+    font-size: 2rem;
+  }
+  .post-type-archive-matchs #container select {
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-left: 10px;
+    background-color: #f2f2f2;
+    border: none;
+    width: calc(100% - 40px);
+    height: 2em;
+    font-size: 1.7rem;
+  }
+  .post-type-archive-matchs #liens-externes a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px 20px 0 20px;
+    padding: 0 10px;
+    background-color: #f2f2f2;
+    width: calc(100% - 60px);
+    height: 2em;
+    line-height: 2em;
+    color: black;
+    font-size: 1.7rem;
+  }
+  .post-type-archive-matchs #liens-externes a svg {
+    text-align: right;
+    height: 70%;
+  }
+  .post-type-archive-matchs .date-match {
+    font-size: 1.7rem;
+    padding: 0 0 0 20px;
+    font-weight: normal;
+    margin: 25px 0 10px 0;
+  }
+  .post-type-archive-matchs .date-match::first-letter {
+    text-transform: uppercase;
+  }
+  .post-type-archive-matchs .match {
+    margin: 0 20px 20px 20px;
+    border: solid 1px #f2f2f2;
+    border-radius: 4px;
+    display: flex;
+    padding: 10px;
+  }
+  .post-type-archive-matchs .match .equipe {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 33%;
+  }
+  .post-type-archive-matchs .match .equipe span {
+    margin-top: 5px;
+  }
+  .post-type-archive-matchs .match .equipe svg {
+    width: 25px;
+  }
+  .post-type-archive-matchs .match .equipe .nom-equipe {
+    font-size: 1.8rem;
+  }
+  .post-type-archive-matchs .match .horaire {
+    width: 33%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-left: solid 1px #f2f2f2;
+    border-right: solid 1px #f2f2f2;
+  }
+  .post-type-archive-matchs .match .horaire time {
+    font-size: 2.4rem;
+  }
+  .post-type-archive-matchs .match .horaire .categorie {
+    font-size: 1.4rem;
+  }
+}
+@media (min-width: 900px) {
+  .post-type-archive-matchs #container {
+    width: calc(100% - 100px);
+    padding: 0 50px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  .post-type-archive-matchs #container h2 {
+    font-size: 2.4rem;
+    font-weight: normal;
+    margin: 25px 0;
+  }
+  .post-type-archive-matchs #container h5 {
+    margin: 20px 20px 0 20px;
+    font-weight: normal;
+    font-size: 2rem;
+  }
+  .post-type-archive-matchs #tri {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: space-between;
+    justify-content: flex-end;
+    height: 90px;
+  }
+  .post-type-archive-matchs #form {
+    padding: 0;
+    margin: 0 20px;
+    height: 2em;
+    width: 44%;
+    max-width: 570px;
+  }
+  .post-type-archive-matchs #select {
+    width: 100%;
+    padding: 0 10px;
+    background-color: #f2f2f2;
+    border: none;
+    height: 100%;
+    font-size: 1.7rem;
+  }
+  .post-type-archive-matchs #liens-externes {
+    padding: 0;
+    margin: 0 20px;
+    width: 44%;
+    height: 100%;
+    max-width: 570px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .post-type-archive-matchs #liens-externes a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0 10px;
+    background-color: #f2f2f2;
+    width: 100%;
+    height: 2em;
+    line-height: 2em;
+    color: black;
+    font-size: 1.7rem;
+  }
+  .post-type-archive-matchs #liens-externes a svg {
+    text-align: right;
+    height: 70%;
+  }
+  .post-type-archive-matchs .container-match {
+    position: relative;
+    display: flex;
+    flex-flow: row wrap;
+  }
+  .post-type-archive-matchs .container-match .container-single-match {
+    flex: 50%;
+  }
+  .post-type-archive-matchs .date-match {
+    width: 100%;
+    font-size: 1.7rem;
+    padding: 0 0 0 20px;
+    font-weight: normal;
+    margin: 25px 0 10px 0;
+  }
+  .post-type-archive-matchs .date-match::first-letter {
+    text-transform: uppercase;
+  }
+  .post-type-archive-matchs .match {
+    margin: 0 20px 20px 20px;
+    border: solid 1px #f2f2f2;
+    border-radius: 4px;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+  }
+  .post-type-archive-matchs .match .equipe {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 33%;
+  }
+  .post-type-archive-matchs .match .equipe span {
+    margin-top: 5px;
+  }
+  .post-type-archive-matchs .match .equipe svg {
+    width: 25px;
+  }
+  .post-type-archive-matchs .match .equipe .nom-equipe {
+    font-size: 1.8rem;
+  }
+  .post-type-archive-matchs .match .horaire {
+    width: 33%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-left: solid 1px #f2f2f2;
+    border-right: solid 1px #f2f2f2;
+  }
+  .post-type-archive-matchs .match .horaire time {
+    font-size: 2.4rem;
+  }
+  .post-type-archive-matchs .match .horaire .categorie {
+    font-size: 1.4rem;
+  }
+}

@@ -1,0 +1,217 @@
+@media (max-width: 700px) {
+  footer h2 {
+    margin-left: 25px;
+    margin-right: 25px;
+    font-size: 2.0rem;
+    font-weight: normal;
+  }
+  footer #sponsors {
+    margin: 0 25px 25px 25px;
+  }
+  footer #sponsors ul {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0;
+  }
+  footer #sponsors ul li {
+    list-style: none;
+    height: 40px;
+    margin: 10px;
+  }
+  footer #sponsors svg {
+    height: 100%;
+  }
+  footer #contact {
+    margin: 0 25px;
+    width: 100%;
+  }
+  footer #contact ul {
+    height: auto;
+  }
+  footer #nav-contact {
+    background-color: #d21b1b;
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  footer #nav-contact nav {
+    margin: 0 25px;
+    width: 100%;
+  }
+  footer #nav-contact h4 {
+    margin: 20px 0 10px 0;
+    border-bottom: 1px solid white;
+  }
+  footer #nav-contact ul {
+    padding: 0;
+    font-size: 1.2rem;
+    line-height: 1.5em;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 160px;
+  }
+  footer #nav-contact ul li {
+    width: calc(50% - 50px);
+    list-style: none;
+    opacity: 0.8;
+    margin-bottom: 20px;
+  }
+  footer #nav-contact ul li a {
+    color: white;
+  }
+}
+@media (min-width: 700px) and (max-width: 900px) {
+  footer h2 {
+    margin-left: 25px;
+    margin-right: 25px;
+    font-size: 3.0rem;
+    font-weight: normal;
+  }
+  footer #sponsors {
+    margin: 0 25px 25px 25px;
+  }
+  footer #sponsors ul {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0;
+  }
+  footer #sponsors ul li {
+    list-style: none;
+    min-height: 40px;
+    margin: 10px;
+  }
+  footer #sponsors img {
+    height: 100%;
+  }
+  footer #nav-contact {
+    background-color: #d21b1b;
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  footer #contact {
+    margin: 0 25px;
+    width: 100%;
+  }
+  footer #contact ul {
+    height: auto;
+  }
+  footer #nav-contact nav {
+    margin: 0 25px;
+    width: 100%;
+  }
+  footer #nav-contact h4 {
+    margin: 20px 0 10px 0;
+    border-bottom: 1px solid white;
+    font-weight: normal;
+    font-size: 2rem;
+  }
+  footer #nav-contact ul {
+    padding: 0;
+    font-size: 1.7rem;
+    line-height: 1.5em;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 190px;
+  }
+  footer #nav-contact ul li {
+    width: calc(50% - 50px);
+    list-style: none;
+    opacity: 0.8;
+    margin-bottom: 20px;
+  }
+  footer #nav-contact ul li a {
+    color: white;
+  }
+}
+@media (min-width: 900px) {
+  footer {
+    width: 100%;
+    margin: 0 auto;
+  }
+  footer h2 {
+    margin: 50px 0 0 0;
+    font-size: 2.4rem;
+    font-weight: normal;
+  }
+  footer #sponsors {
+    margin: 0 auto 25px auto;
+    max-width: 1400px;
+    padding: 0 50px;
+  }
+  footer #sponsors ul {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0;
+  }
+  footer #sponsors ul li {
+    list-style: none;
+    height: 60px;
+    margin: 10px;
+  }
+  footer #sponsors img {
+    height: 100%;
+  }
+  footer #nav-contact {
+    background-color: #d21b1b;
+    padding: 0 50px;
+  }
+  footer #container-footer {
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  footer #container-footer nav {
+    margin: 0 100px 0 0;
+  }
+  footer #contact {
+    margin: 0;
+    width: 480px;
+  }
+  footer #nav-contact nav {
+    width: 480px;
+  }
+  footer #nav-contact h4 {
+    margin: 20px 0 10px 0;
+    border-bottom: none;
+    font-weight: normal;
+    font-size: 1.8rem;
+  }
+  footer #nav-contact ul {
+    padding: 0;
+    font-size: 1.7rem;
+    line-height: 1.5em;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 120px;
+  }
+  footer #nav-contact ul li {
+    width: calc(50% - 50px);
+    list-style: none;
+    opacity: 0.8;
+    font-size: 1.7rem;
+    margin-bottom: 8px;
+    transition: 0.2s ease;
+  }
+  footer #nav-contact ul li a {
+    color: white;
+  }
+  footer #nav-contact ul li a:hover {
+    opacity: 1;
+  }
+}

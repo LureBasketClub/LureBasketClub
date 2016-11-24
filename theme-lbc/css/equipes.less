@@ -1,0 +1,115 @@
+@media (max-width: 700px) {
+  .post-type-archive-equipes {
+    #container {
+      width: 100%;
+
+      .equipe {
+        margin-bottom: 25px;
+
+        &:first-of-type {
+          padding-top: 80px;
+        }
+        img {
+          width: 100%;
+          height: 100%;
+          display: block;
+        }
+
+        .description {
+          background-color: #d21b1b;
+          color: white;
+          padding: 10px 20px;
+
+          h4 {
+            margin: 0;
+            font-size: 2.0rem;
+          }
+
+          p {
+            font-size: 1.2rem;
+          }
+        }
+      }
+
+    }
+  }
+}
+
+@media (min-width: 700px) and (max-width: 900px) {
+  .post-type-archive-equipes {
+    #container {
+      width: 100%;
+
+      .equipe {
+        margin-bottom: 50px;
+
+        &:first-of-type {
+          padding-top: 80px;
+        }
+
+        img {
+          width: 100%;
+          height: 100%;
+          display: block;
+        }
+
+        .description {
+          background-color: #d21b1b;
+          color: white;
+          padding: 10px 20px;
+
+          h4 {
+            margin: 0;
+            font-size: 3.0rem;
+          }
+
+          p {
+            font-size: 1.7rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 900px) {
+  .post-type-archive-equipes {
+    #container {
+      width: ~"calc(100% - 100px)";
+      padding: 0 50px;
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+
+      .equipe {
+        width: 48%;
+        margin: 25px 0;
+
+        img {
+          width: 100%;
+          height: 100%;
+          display: block;
+        }
+
+        .description {
+          background-color: #d21b1b;
+          color: white;
+          padding: 10px 20px;
+
+          h4 {
+            margin: 0;
+            font-size: 3.0rem;
+            font-weight: normal;
+          }
+
+          p {
+            font-size: 1.7rem;
+          }
+        }
+      }
+    }
+  }
+}

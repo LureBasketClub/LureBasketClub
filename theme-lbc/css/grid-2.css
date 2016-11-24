@@ -1,0 +1,288 @@
+.post-type-archive-galerie figure,
+.post-type-archive-actualites figure,
+.tax-saisons figure,
+.single-galerie figure,
+.single-evenement figure {
+  margin: 0;
+  width: 100%;
+}
+@media (max-width: 700px) {
+  .post-type-archive-galerie #container,
+  .post-type-archive-actualites #container,
+  .tax-saisons #container,
+  .single-galerie #container,
+  .single-evenement #container {
+    padding: 80px 0 0 0;
+    width: 100%;
+  }
+  .post-type-archive-galerie #container h2,
+  .post-type-archive-actualites #container h2,
+  .tax-saisons #container h2,
+  .single-galerie #container h2,
+  .single-evenement #container h2 {
+    font-size: 2.0rem;
+    margin: 25px 25px;
+  }
+  .post-type-archive-galerie #grid,
+  .post-type-archive-actualites #grid,
+  .tax-saisons #grid,
+  .single-galerie #grid,
+  .single-evenement #grid {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 25px;
+  }
+  .post-type-archive-galerie #grid .actu,
+  .post-type-archive-actualites #grid .actu,
+  .tax-saisons #grid .actu,
+  .single-galerie #grid .actu,
+  .single-evenement #grid .actu {
+    width: calc(50% - 10px);
+    margin: 0 5px 25px 5px;
+  }
+  .post-type-archive-galerie #grid .actu h3,
+  .post-type-archive-actualites #grid .actu h3,
+  .tax-saisons #grid .actu h3,
+  .single-galerie #grid .actu h3,
+  .single-evenement #grid .actu h3 {
+    margin: 0;
+    font-size: 1.2rem;
+  }
+  .post-type-archive-galerie #grid .actu time,
+  .post-type-archive-actualites #grid .actu time,
+  .tax-saisons #grid .actu time,
+  .single-galerie #grid .actu time,
+  .single-evenement #grid .actu time {
+    font-size: 1.2rem;
+  }
+  .post-type-archive-galerie #grid .actu img,
+  .post-type-archive-actualites #grid .actu img,
+  .tax-saisons #grid .actu img,
+  .single-galerie #grid .actu img,
+  .single-evenement #grid .actu img {
+    width: 100%;
+    height: 100%;
+  }
+  .post-type-archive-galerie #retour-galerie,
+  .post-type-archive-actualites #retour-galerie,
+  .tax-saisons #retour-galerie,
+  .single-galerie #retour-galerie,
+  .single-evenement #retour-galerie {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 3em;
+    margin: 0 auto;
+    background-color: #f2f2f2;
+  }
+  .post-type-archive-galerie #retour-galerie svg,
+  .post-type-archive-actualites #retour-galerie svg,
+  .tax-saisons #retour-galerie svg,
+  .single-galerie #retour-galerie svg,
+  .single-evenement #retour-galerie svg {
+    position: absolute;
+    height: 70%;
+    right: 0;
+    top: 17%;
+  }
+}
+@media (min-width: 700px) and (max-width: 900px) {
+  .post-type-archive-galerie #container,
+  .post-type-archive-actualites #container,
+  .tax-saisons #container,
+  .single-galerie #container,
+  .single-evenement #container {
+    padding: 80px 0 0 0;
+    width: 100%;
+  }
+  .post-type-archive-galerie #container h2,
+  .post-type-archive-actualites #container h2,
+  .tax-saisons #container h2,
+  .single-galerie #container h2,
+  .single-evenement #container h2 {
+    font-size: 3.0rem;
+    margin: 25px 50px;
+  }
+  .post-type-archive-galerie #grid,
+  .post-type-archive-actualites #grid,
+  .tax-saisons #grid,
+  .single-galerie #grid,
+  .single-evenement #grid {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 50px;
+  }
+  .post-type-archive-galerie #grid .actu,
+  .post-type-archive-actualites #grid .actu,
+  .tax-saisons #grid .actu,
+  .single-galerie #grid .actu,
+  .single-evenement #grid .actu {
+    width: calc(50% - 10px);
+    margin: 0 5px 25px 5px;
+  }
+  .post-type-archive-galerie #grid .actu h3,
+  .post-type-archive-actualites #grid .actu h3,
+  .tax-saisons #grid .actu h3,
+  .single-galerie #grid .actu h3,
+  .single-evenement #grid .actu h3 {
+    margin: 0;
+    font-size: 1.7rem;
+  }
+  .post-type-archive-galerie #grid .actu time,
+  .post-type-archive-actualites #grid .actu time,
+  .tax-saisons #grid .actu time,
+  .single-galerie #grid .actu time,
+  .single-evenement #grid .actu time {
+    font-size: 1.7rem;
+  }
+  .post-type-archive-galerie #grid .actu img,
+  .post-type-archive-actualites #grid .actu img,
+  .tax-saisons #grid .actu img,
+  .single-galerie #grid .actu img,
+  .single-evenement #grid .actu img {
+    width: 100%;
+    height: 100%;
+  }
+  .post-type-archive-galerie #retour-galerie,
+  .post-type-archive-actualites #retour-galerie,
+  .tax-saisons #retour-galerie,
+  .single-galerie #retour-galerie,
+  .single-evenement #retour-galerie {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 3em;
+    margin: 0 50px;
+    background-color: #f2f2f2;
+  }
+  .post-type-archive-galerie #retour-galerie svg,
+  .post-type-archive-actualites #retour-galerie svg,
+  .tax-saisons #retour-galerie svg,
+  .single-galerie #retour-galerie svg,
+  .single-evenement #retour-galerie svg {
+    position: absolute;
+    height: 70%;
+    right: 0;
+    top: 17%;
+  }
+}
+@media (min-width: 900px) {
+  .post-type-archive-galerie #container,
+  .post-type-archive-actualites #container,
+  .tax-saisons #container,
+  .single-galerie #container,
+  .single-evenement #container {
+    margin: 0 auto;
+    width: calc(100% - 100px);
+    padding: 0 50px;
+    max-width: 1400px;
+  }
+  .post-type-archive-galerie #container h2,
+  .post-type-archive-actualites #container h2,
+  .tax-saisons #container h2,
+  .single-galerie #container h2,
+  .single-evenement #container h2 {
+    font-size: 2.4rem;
+    margin: 25px 0;
+    font-weight: normal;
+  }
+  .post-type-archive-galerie #grid,
+  .post-type-archive-actualites #grid,
+  .tax-saisons #grid,
+  .single-galerie #grid,
+  .single-evenement #grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0;
+  }
+  .post-type-archive-galerie #grid .actu,
+  .post-type-archive-actualites #grid .actu,
+  .tax-saisons #grid .actu,
+  .single-galerie #grid .actu,
+  .single-evenement #grid .actu {
+    width: 31%;
+    margin: 0 0 25px 0;
+  }
+  .post-type-archive-galerie #grid .actu h3,
+  .post-type-archive-actualites #grid .actu h3,
+  .tax-saisons #grid .actu h3,
+  .single-galerie #grid .actu h3,
+  .single-evenement #grid .actu h3 {
+    margin: 0;
+    font-size: 1.7rem;
+    font-weight: normal;
+  }
+  .post-type-archive-galerie #grid .actu time,
+  .post-type-archive-actualites #grid .actu time,
+  .tax-saisons #grid .actu time,
+  .single-galerie #grid .actu time,
+  .single-evenement #grid .actu time {
+    font-size: 1.7rem;
+  }
+  .post-type-archive-galerie #grid .actu img,
+  .post-type-archive-actualites #grid .actu img,
+  .tax-saisons #grid .actu img,
+  .single-galerie #grid .actu img,
+  .single-evenement #grid .actu img {
+    width: 100%;
+    height: 100%;
+  }
+  .post-type-archive-galerie #grid .actu figure,
+  .post-type-archive-actualites #grid .actu figure,
+  .tax-saisons #grid .actu figure,
+  .single-galerie #grid .actu figure,
+  .single-evenement #grid .actu figure {
+    overflow: hidden;
+  }
+  .post-type-archive-galerie #grid .actu figure img,
+  .post-type-archive-actualites #grid .actu figure img,
+  .tax-saisons #grid .actu figure img,
+  .single-galerie #grid .actu figure img,
+  .single-evenement #grid .actu figure img {
+    transform: scale(1.2);
+    transition: 0.3s ease-in-out;
+  }
+  .post-type-archive-galerie #grid .actu figure:hover img,
+  .post-type-archive-actualites #grid .actu figure:hover img,
+  .tax-saisons #grid .actu figure:hover img,
+  .single-galerie #grid .actu figure:hover img,
+  .single-evenement #grid .actu figure:hover img {
+    transform: scale(1);
+  }
+  .post-type-archive-galerie #retour-galerie,
+  .post-type-archive-actualites #retour-galerie,
+  .tax-saisons #retour-galerie,
+  .single-galerie #retour-galerie,
+  .single-evenement #retour-galerie {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 600px;
+    height: 3em;
+    margin: 0 auto;
+    background-color: #f2f2f2;
+    transition: ease 0.2s;
+  }
+  .post-type-archive-galerie #retour-galerie:hover,
+  .post-type-archive-actualites #retour-galerie:hover,
+  .tax-saisons #retour-galerie:hover,
+  .single-galerie #retour-galerie:hover,
+  .single-evenement #retour-galerie:hover {
+    background-color: #D1D1D1;
+  }
+  .post-type-archive-galerie #retour-galerie svg,
+  .post-type-archive-actualites #retour-galerie svg,
+  .tax-saisons #retour-galerie svg,
+  .single-galerie #retour-galerie svg,
+  .single-evenement #retour-galerie svg {
+    position: absolute;
+    height: 70%;
+    right: 0;
+    top: 17%;
+  }
+}

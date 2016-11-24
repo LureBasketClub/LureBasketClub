@@ -1,0 +1,379 @@
+@media (max-width: 700px) {
+
+  .single-matchs {
+    #container {
+      h2 {
+
+        font-size: 2.0rem;
+        font-weight: normal;
+        padding: 80px 0 0 20px;
+        margin: 0;
+      }
+
+      h3 {
+        font-size: 2.0rem;
+        background-color: #d21b1b;
+        margin: 0;
+        padding: 10px 10px 10px 20px;
+        color: white;
+        font-weight: normal;
+      }
+
+      .date-match {
+        font-size: 1.6rem;
+        padding: 0 0 0 20px;
+        font-weight: normal;
+        margin: 25px 0 10px 0;
+      }
+
+      .match {
+        margin: 0 20px 20px 20px;
+        border: solid 1px #f2f2f2;
+        border-radius: 4px;
+        display: flex;
+        padding: 10px;
+
+        .equipe {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          width: 33%;
+
+          span {
+            margin-top: 5px;
+          }
+
+          svg {
+            width: 25px;
+          }
+
+          .nom-equipe {
+            font-size: 1.8rem;
+          }
+        }
+
+        .horaire {
+          width: 33%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          border-left: solid 1px #f2f2f2;
+          border-right: solid 1px #f2f2f2;
+
+          time {
+            font-size: 2.4rem;
+          }
+
+          .categorie {
+            font-size: 1.4rem;
+          }
+        }
+      }
+
+      .container-text {
+        border-left: solid 1px #d21b1b;
+        margin: 0 0 0 25px;
+        padding: 0 25px 0 0;
+
+        p {
+          font-size: 1.2rem;
+          margin-left: 15px;
+          display: block;
+
+          &:first-of-type {
+            margin-top: 0;
+            padding-top: 1em;
+          }
+
+          a {
+            color: #d21b1b;
+          }
+        }
+        .indenté {
+          margin-left: 30px;
+        }
+
+      }
+    }
+
+    #retour-calendrier {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 3em;
+      margin: 0 auto;
+      color: black;
+      background-color: #f2f2f2;
+
+      svg {
+        position: absolute;
+        height: 70%;
+        right: 0;
+        top: 17%;
+      }
+    }
+  }
+}
+
+@media (min-width: 700px) and (max-width: 900px) {
+  .single-matchs {
+    #container {
+      padding: 0 50px;
+
+      h2 {
+        font-size: 3.0rem;
+        font-weight: normal;
+        padding: 80px 0 0 0;
+        margin: 0;
+      }
+
+      .date-match {
+        font-size: 1.8rem;
+        padding: 0 0 0 20px;
+        font-weight: normal;
+        margin: 25px 0 10px 0;
+      }
+
+      .match {
+        margin: 0 20px 20px 20px;
+        border: solid 1px #f2f2f2;
+        border-radius: 4px;
+        display: flex;
+        padding: 10px;
+
+        .equipe {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          width: 33%;
+
+          span {
+            margin-top: 5px;
+          }
+
+          svg {
+            width: 25px;
+          }
+
+          .nom-equipe {
+            font-size: 2rem;
+          }
+        }
+
+        .horaire {
+          width: 33%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          border-left: solid 1px #f2f2f2;
+          border-right: solid 1px #f2f2f2;
+
+          time {
+            font-size: 3rem;
+          }
+
+          .categorie {
+            font-size: 1.7rem;
+          }
+        }
+      }
+
+      h3 {
+        font-size: 2.2rem;
+        background-color: #d21b1b;
+        margin: 0;
+        padding: 10px 10px 10px 20px;
+        color: white;
+        font-weight: normal;
+      }
+
+      .container-text {
+        border-left: solid 1px #d21b1b;
+        margin: 0 0 0 25px;
+        padding: 0 25px 0 0;
+
+        p {
+          font-size: 1.7rem;
+          margin-left: 15px;
+          display: block;
+
+          a {
+            color: #d21b1b;
+          }
+
+          &:first-of-type {
+            margin-top: 0;
+            padding-top: 1em;
+          }
+        }
+
+        .indenté {
+          margin-left: 30px;
+        }
+      }
+
+      #retour-calendrier {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 3em;
+        margin: 0 50px;
+        background-color: #f2f2f2;
+        color: black;
+
+        svg {
+          position: absolute;
+          height: 70%;
+          right: 0;
+          top: 17%;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 900px) {
+
+  .single-matchs {
+    #container {
+      margin: 0 auto;
+      width: ~"calc(100% - 100px)";
+      padding: 0 50px;
+      max-width: 1400px;
+
+      h2 {
+        font-size: 2.4rem;
+        font-weight: normal;
+        padding: 25px 0 0 20px;
+        margin: 0;
+      }
+
+      .container-match {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+      }
+
+      .date-match {
+        font-size: 1.8rem;
+        padding: 0 0 0 20px;
+        font-weight: normal;
+        margin: 25px 0 10px 0;
+      }
+
+      .match {
+        margin: 0 20px 20px 20px;
+        border: solid 1px #f2f2f2;
+        border-radius: 4px;
+        display: flex;
+        padding: 10px;
+        width: 850px;
+
+        .equipe {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          width: 33%;
+
+          span {
+            margin-top: 5px;
+          }
+
+          svg {
+            width: 25px;
+          }
+
+          .nom-equipe {
+            font-size: 2rem;
+          }
+        }
+
+        .horaire {
+          width: 33%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          border-left: solid 1px #f2f2f2;
+          border-right: solid 1px #f2f2f2;
+
+          time {
+            font-size: 3rem;
+          }
+
+          .categorie {
+            font-size: 1.7rem;
+          }
+        }
+      }
+
+      h3 {
+        font-size: 2.2rem;
+        background-color: #d21b1b;
+        margin: 0;
+        padding: 10px 10px 10px 20px;
+        color: white;
+        font-weight: normal;
+      }
+
+      .container-text {
+        border-left: solid 1px #d21b1b;
+        margin: 0 0 0 25px;
+        padding: 0 25px 0 0;
+
+        p {
+          font-size: 1.7rem;
+          margin-left: 15px;
+          display: block;
+
+          &:first-of-type {
+            margin-top: 0;
+            padding-top: 1em;
+          }
+
+          a {
+            color: #d21b1b;
+          }
+        }
+
+        .indenté {
+          margin-left: 30px;
+        }
+      }
+
+      #retour-calendrier {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 600px;
+        height: 3em;
+        margin: 0 auto;
+        color: black;
+        background-color: #f2f2f2;
+        transition: ease 0.2s;
+
+        &:hover {
+          background-color: #D1D1D1;
+        }
+
+        svg {
+          position: absolute;
+          height: 70%;
+          right: 0;
+          top: 17%;
+        }
+      }
+    }
+  }
+}

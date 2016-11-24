@@ -1,0 +1,273 @@
+@media (max-width: 700px) {
+
+  footer {
+    h2 {
+      margin-left: 25px;
+      margin-right: 25px;
+      font-size: 2.0rem;
+      font-weight: normal;
+    }
+
+    #sponsors {
+      margin: 0 25px 25px 25px;
+
+      ul {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        padding: 0;
+        margin: 0;
+
+        li {
+          list-style: none;
+          height: 40px;
+          margin: 10px;
+        }
+      }
+
+      svg {
+        height: 100%;
+      }
+    }
+
+    #contact {
+      margin: 0 25px;
+      width: 100%;
+
+      ul {
+        height: auto;
+      }
+    }
+
+    #nav-contact {
+      background-color: #d21b1b;
+      color: white;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    #nav-contact {
+      nav {
+        margin: 0 25px;
+        width: 100%;
+      }
+
+      h4 {
+        margin: 20px 0 10px 0;
+        border-bottom: 1px solid white;
+      }
+
+      ul {
+        padding: 0;
+        font-size: 1.2rem;
+        line-height: 1.5em;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        height: 160px;
+
+        li {
+          width: ~"calc(50% - 50px)";
+          list-style: none;
+          opacity: 0.8;
+          margin-bottom: 20px;
+
+          a {
+            color: white;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 700px) and (max-width: 900px) {
+
+  footer {
+    h2 {
+      margin-left: 25px;
+      margin-right: 25px;
+      font-size: 3.0rem;
+      font-weight: normal;
+    }
+
+    #sponsors {
+      margin: 0 25px 25px 25px;
+
+      ul {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        padding: 0;
+        margin: 0;
+
+        li {
+          list-style: none;
+          min-height: 40px;
+          margin: 10px;
+        }
+      }
+
+      img {
+        height: 100%;
+      }
+    }
+
+    #nav-contact {
+      background-color: #d21b1b;
+      color: white;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    #contact {
+      margin: 0 25px;
+      width: 100%;
+
+      ul {
+        height: auto;
+      }
+    }
+
+    #nav-contact {
+      nav {
+        margin: 0 25px;
+        width: 100%;
+      }
+
+      h4 {
+        margin: 20px 0 10px 0;
+        border-bottom: 1px solid white;
+        font-weight: normal;
+        font-size: 2rem;
+      }
+
+      ul {
+        padding: 0;
+        font-size: 1.7rem;
+        line-height: 1.5em;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        height: 190px;
+
+        li {
+          width: ~"calc(50% - 50px)";
+          list-style: none;
+          opacity: 0.8;
+          margin-bottom: 20px;
+
+          a {
+            color: white;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 900px) {
+
+  footer {
+    width: 100%;
+    margin: 0 auto;
+
+    h2 {
+      margin: 50px 0 0 0;
+      font-size: 2.4rem;
+      font-weight: normal;
+    }
+
+    #sponsors {
+      margin: 0 auto 25px auto;
+      max-width: 1400px;
+      padding: 0 50px;
+
+      ul {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        padding: 0;
+        margin: 0;
+
+        li {
+          list-style: none;
+          height: 60px;
+          margin: 10px;
+        }
+      }
+
+      img {
+        height: 100%;
+      }
+    }
+
+    #nav-contact {
+      background-color: #d21b1b;
+      padding: 0 50px;
+
+    }
+
+    #container-footer {
+      color: white;
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 1400px;
+      margin: 0 auto;
+
+      nav {
+        margin: 0 100px 0 0;
+      }
+    }
+
+    #contact {
+      margin: 0;
+      width: 480px;
+    }
+
+    #nav-contact {
+      nav {
+        width: 480px;
+      }
+
+      h4 {
+        margin: 20px 0 10px 0;
+        border-bottom: none;
+        font-weight: normal;
+        font-size: 1.8rem;
+      }
+
+      ul {
+        padding: 0;
+        font-size: 1.7rem;
+        line-height: 1.5em;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        height: 120px;
+
+        li {
+          width: ~"calc(50% - 50px)";
+          list-style: none;
+          opacity: 0.8;
+          font-size: 1.7rem;
+          margin-bottom: 8px;
+          transition: 0.2s ease;
+
+          a {
+            color: white;
+
+            &:hover {
+              opacity: 1;
+            }
+          }
+        }
+
+      }
+    }
+  }
+}

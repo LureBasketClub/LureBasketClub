@@ -1,0 +1,311 @@
+@media (max-width: 700px) {
+  .single-matchs #container h2 {
+    font-size: 2.0rem;
+    font-weight: normal;
+    padding: 80px 0 0 20px;
+    margin: 0;
+  }
+  .single-matchs #container h3 {
+    font-size: 2.0rem;
+    background-color: #d21b1b;
+    margin: 0;
+    padding: 10px 10px 10px 20px;
+    color: white;
+    font-weight: normal;
+  }
+  .single-matchs #container .date-match {
+    font-size: 1.6rem;
+    padding: 0 0 0 20px;
+    font-weight: normal;
+    margin: 25px 0 10px 0;
+  }
+  .single-matchs #container .match {
+    margin: 0 20px 20px 20px;
+    border: solid 1px #f2f2f2;
+    border-radius: 4px;
+    display: flex;
+    padding: 10px;
+  }
+  .single-matchs #container .match .equipe {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 33%;
+  }
+  .single-matchs #container .match .equipe span {
+    margin-top: 5px;
+  }
+  .single-matchs #container .match .equipe svg {
+    width: 25px;
+  }
+  .single-matchs #container .match .equipe .nom-equipe {
+    font-size: 1.8rem;
+  }
+  .single-matchs #container .match .horaire {
+    width: 33%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-left: solid 1px #f2f2f2;
+    border-right: solid 1px #f2f2f2;
+  }
+  .single-matchs #container .match .horaire time {
+    font-size: 2.4rem;
+  }
+  .single-matchs #container .match .horaire .categorie {
+    font-size: 1.4rem;
+  }
+  .single-matchs #container .container-text {
+    border-left: solid 1px #d21b1b;
+    margin: 0 0 0 25px;
+    padding: 0 25px 0 0;
+  }
+  .single-matchs #container .container-text p {
+    font-size: 1.2rem;
+    margin-left: 15px;
+    display: block;
+  }
+  .single-matchs #container .container-text p:first-of-type {
+    margin-top: 0;
+    padding-top: 1em;
+  }
+  .single-matchs #container .container-text p a {
+    color: #d21b1b;
+  }
+  .single-matchs #container .container-text .indenté {
+    margin-left: 30px;
+  }
+  .single-matchs #retour-calendrier {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 3em;
+    margin: 0 auto;
+    color: black;
+    background-color: #f2f2f2;
+  }
+  .single-matchs #retour-calendrier svg {
+    position: absolute;
+    height: 70%;
+    right: 0;
+    top: 17%;
+  }
+}
+@media (min-width: 700px) and (max-width: 900px) {
+  .single-matchs #container {
+    padding: 0 50px;
+  }
+  .single-matchs #container h2 {
+    font-size: 3.0rem;
+    font-weight: normal;
+    padding: 80px 0 0 0;
+    margin: 0;
+  }
+  .single-matchs #container .date-match {
+    font-size: 1.8rem;
+    padding: 0 0 0 20px;
+    font-weight: normal;
+    margin: 25px 0 10px 0;
+  }
+  .single-matchs #container .match {
+    margin: 0 20px 20px 20px;
+    border: solid 1px #f2f2f2;
+    border-radius: 4px;
+    display: flex;
+    padding: 10px;
+  }
+  .single-matchs #container .match .equipe {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 33%;
+  }
+  .single-matchs #container .match .equipe span {
+    margin-top: 5px;
+  }
+  .single-matchs #container .match .equipe svg {
+    width: 25px;
+  }
+  .single-matchs #container .match .equipe .nom-equipe {
+    font-size: 2rem;
+  }
+  .single-matchs #container .match .horaire {
+    width: 33%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-left: solid 1px #f2f2f2;
+    border-right: solid 1px #f2f2f2;
+  }
+  .single-matchs #container .match .horaire time {
+    font-size: 3rem;
+  }
+  .single-matchs #container .match .horaire .categorie {
+    font-size: 1.7rem;
+  }
+  .single-matchs #container h3 {
+    font-size: 2.2rem;
+    background-color: #d21b1b;
+    margin: 0;
+    padding: 10px 10px 10px 20px;
+    color: white;
+    font-weight: normal;
+  }
+  .single-matchs #container .container-text {
+    border-left: solid 1px #d21b1b;
+    margin: 0 0 0 25px;
+    padding: 0 25px 0 0;
+  }
+  .single-matchs #container .container-text p {
+    font-size: 1.7rem;
+    margin-left: 15px;
+    display: block;
+  }
+  .single-matchs #container .container-text p a {
+    color: #d21b1b;
+  }
+  .single-matchs #container .container-text p:first-of-type {
+    margin-top: 0;
+    padding-top: 1em;
+  }
+  .single-matchs #container .container-text .indenté {
+    margin-left: 30px;
+  }
+  .single-matchs #container #retour-calendrier {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 3em;
+    margin: 0 50px;
+    background-color: #f2f2f2;
+    color: black;
+  }
+  .single-matchs #container #retour-calendrier svg {
+    position: absolute;
+    height: 70%;
+    right: 0;
+    top: 17%;
+  }
+}
+@media (min-width: 900px) {
+  .single-matchs #container {
+    margin: 0 auto;
+    width: calc(100% - 100px);
+    padding: 0 50px;
+    max-width: 1400px;
+  }
+  .single-matchs #container h2 {
+    font-size: 2.4rem;
+    font-weight: normal;
+    padding: 25px 0 0 20px;
+    margin: 0;
+  }
+  .single-matchs #container .container-match {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+  .single-matchs #container .date-match {
+    font-size: 1.8rem;
+    padding: 0 0 0 20px;
+    font-weight: normal;
+    margin: 25px 0 10px 0;
+  }
+  .single-matchs #container .match {
+    margin: 0 20px 20px 20px;
+    border: solid 1px #f2f2f2;
+    border-radius: 4px;
+    display: flex;
+    padding: 10px;
+    width: 850px;
+  }
+  .single-matchs #container .match .equipe {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 33%;
+  }
+  .single-matchs #container .match .equipe span {
+    margin-top: 5px;
+  }
+  .single-matchs #container .match .equipe svg {
+    width: 25px;
+  }
+  .single-matchs #container .match .equipe .nom-equipe {
+    font-size: 2rem;
+  }
+  .single-matchs #container .match .horaire {
+    width: 33%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-left: solid 1px #f2f2f2;
+    border-right: solid 1px #f2f2f2;
+  }
+  .single-matchs #container .match .horaire time {
+    font-size: 3rem;
+  }
+  .single-matchs #container .match .horaire .categorie {
+    font-size: 1.7rem;
+  }
+  .single-matchs #container h3 {
+    font-size: 2.2rem;
+    background-color: #d21b1b;
+    margin: 0;
+    padding: 10px 10px 10px 20px;
+    color: white;
+    font-weight: normal;
+  }
+  .single-matchs #container .container-text {
+    border-left: solid 1px #d21b1b;
+    margin: 0 0 0 25px;
+    padding: 0 25px 0 0;
+  }
+  .single-matchs #container .container-text p {
+    font-size: 1.7rem;
+    margin-left: 15px;
+    display: block;
+  }
+  .single-matchs #container .container-text p:first-of-type {
+    margin-top: 0;
+    padding-top: 1em;
+  }
+  .single-matchs #container .container-text p a {
+    color: #d21b1b;
+  }
+  .single-matchs #container .container-text .indenté {
+    margin-left: 30px;
+  }
+  .single-matchs #container #retour-calendrier {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 600px;
+    height: 3em;
+    margin: 0 auto;
+    color: black;
+    background-color: #f2f2f2;
+    transition: ease 0.2s;
+  }
+  .single-matchs #container #retour-calendrier:hover {
+    background-color: #D1D1D1;
+  }
+  .single-matchs #container #retour-calendrier svg {
+    position: absolute;
+    height: 70%;
+    right: 0;
+    top: 17%;
+  }
+}
