@@ -11,7 +11,6 @@
                 <article class="actu main">
                     <figure><?php the_post_thumbnail(); ?></figure>
                     <div class="description">
-                        <h5><?php echo(rwmb_meta("lbc_sous-titre")); ?></h5>
                         <h3><?php the_title(); ?></h3>
                         <?php the_excerpt(); ?>
                     </div>
@@ -26,10 +25,10 @@
             $matchs = new WP_Query('post_type=matchs&posts_per_page=5');
             while ($matchs->have_posts()): $matchs->the_post(); ?>
 
-                <?php $date_match_2 = rwmb_meta("lbc_date"); ?>
+                <?php $date_match = rwmb_meta("lbc_date"); ?>
                 <?php $time = current_time('Y-m-d'); ?>
 
-            <?php if ($date_match_2 > $time) {
+            <?php if ($date_match > $time) {
 
             echo'<h4 class="date-match">
                      '.date_i18n( ' l d F ',strtotime(rwmb_meta("lbc_date"))).'

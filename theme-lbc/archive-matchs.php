@@ -61,7 +61,7 @@
                 echo '<div class="container-single-match '.$term->slug.'">
                 <h4 class="date-match">'.$date_match.'</h4>
                 
-                <a href="'.get_permalink( $post->ID).'" class="match">
+                <a href="'.the_permalink().'" class="match">
                                 
                 <div class="equipe">
                         <svg version="1.1" class="logo-equipe-1" xmlns="http://www.w3.org/2000/svg"

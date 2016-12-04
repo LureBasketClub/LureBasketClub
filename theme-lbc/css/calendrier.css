@@ -247,7 +247,7 @@
     flex-flow: row wrap;
   }
   .post-type-archive-matchs .container-match .container-single-match {
-    flex: 50%;
+    width: 50%;
   }
   .post-type-archive-matchs .date-match {
     width: 100%;

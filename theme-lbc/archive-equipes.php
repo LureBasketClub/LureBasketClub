@@ -7,6 +7,7 @@
             <div class="description">
                 <h4><?php the_title(); ?></h4>
                 <p>Entraineur : <?php echo(rwmb_meta("lbc_entraineur")); ?>
+                    - <a href="tel:<?php echo(rwmb_meta("lbc_num_tel")); ?>" class="num_tel"><?php echo(rwmb_meta("lbc_num_tel")); ?></a> .</p>
                 <p>Couleur maillots et sponsors : <?php echo(rwmb_meta("lbc_couleur_maillot_texte")); ?>
                     , <?php echo(rwmb_meta("lbc_sponsors")); ?>.</p>
             </div>

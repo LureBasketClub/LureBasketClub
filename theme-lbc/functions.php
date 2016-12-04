@@ -173,26 +173,6 @@ function ajout_meta_boxes($meta_boxes)
         )
     );
 
-    // Match exterieur
-    $meta_boxes[] = array(
-        // le titre de la boîte
-        'title' => 'Match extérieur',
-        // le type ou les types ou sera affiché cette "boîte" (séparé par des virgules)
-        'pages' => array('matchs'),
-        // La liste des champs de formulaire affiché par la "boîte"
-        'fields' => array(
-            // Répeter pour chaque champ : ses options
-            array(
-                // Son nom affiché
-                'name' => 'Match exterieur',
-                // Un identifiant unique, utilisé pour lire la valeur en PHP
-                'id' => 'lbc_match_ext',
-                // son type
-                'type' => 'checkbox',
-            ),
-        )
-    );
-
     // Sous titre actualité
     $meta_boxes[] = array(
         // le titre de la boîte
@@ -227,14 +207,6 @@ function ajout_meta_boxes($meta_boxes)
                 'name' => 'Heure du début du match',
                 // Un identifiant unique, utilisé pour lire la valeur en PHP
                 'id' => 'lbc_heure_debut',
-                // son type
-                'type' => 'time',
-            ),
-            array(
-                // Son nom affiché
-                'name' => 'Heure de fin du match',
-                // Un identifiant unique, utilisé pour lire la valeur en PHP
-                'id' => 'lbc_heure_fin',
                 // son type
                 'type' => 'time',
             ),

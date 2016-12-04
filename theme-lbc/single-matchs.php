@@ -4,7 +4,8 @@
     <h2>Match</h2>
 
     <div class="container-match">
-        <h4 class="date-match"><?php echo(rwmb_meta("lbc_date")); ?></h4>
+        <?php $date_match = date_i18n(' l d F ', strtotime(rwmb_meta("lbc_date"))); ?>
+        <h4 class="date-match"><?php echo $date_match; ?></h4>
         <div class="match">
             <div class="equipe">
                 <svg version="1.1" class="logo-equipe-1" xmlns="http://www.w3.org/2000/svg"
@@ -41,9 +42,10 @@
 
 
     <h3>Détails de la rencontre</h3>
+
     <div class="container-text">
-        <p>Jour : <?php echo(rwmb_meta("lbc_date")); ?></p>
-        <p>Horaire : de <?php echo(rwmb_meta("lbc_heure_debut")); ?> à <?php echo(rwmb_meta("lbc_heure_fin")); ?>.</p>
+        <p>Jour : <?php echo $date_match ?></p>
+        <p>Horaire : à <?php echo(rwmb_meta("lbc_heure_debut")); ?>.</p>
         <p>Lieu : <?php echo(rwmb_meta("lbc_salle")); ?> à <?php echo(rwmb_meta("lbc_ville")); ?>.</p>
 
         <?php $ext = (rwmb_meta("lbc_match_ext"));
@@ -51,20 +53,18 @@
         ?>
 
 <?php
-if ($ext == 1){
+if ((rwmb_meta("lbc_equipe_2"))=='Lure'){
     echo'<div id="officiels">
     <p>Heure de rendez-vous : '.(rwmb_meta("lbc_heure_debut")).' .</p>
   </div>';
 }else{
-  echo'<div id="officiels">
-    <p>Arbitres : '; echo(rwmb_meta("lbc_arbitre_1")); echo ' et '; echo(rwmb_meta("lbc_arbitre_2")); echo'.</p>
-    <p>Marqueur : '; echo(rwmb_meta("lbc_marqueur")); echo'.</p>
-    <p>Chronométreur : '; echo(rwmb_meta("lbc_chronometreur")); echo'.</p>
-    <p>Équipes : '; echo(rwmb_meta("lbc_equipe_1")); echo' vs '; echo(rwmb_meta("lbc_equipe_2"));echo'.</p>
-    <p>Catégorie : '; echo(rwmb_meta("lbc_categorie")); echo'.</p>
-    <p>Résultats : <a href="http://www.fédération-basket.fr/lurebelfort18122016">Voir les résultats</a></p>
-  </div>';
-    
+  echo'
+    <p>Arbitres : '.(rwmb_meta("lbc_arbitre_1")).' et '.(rwmb_meta("lbc_arbitre_2")).'.</p>
+    <p>Marqueur : '.(rwmb_meta("lbc_marqueur")).'.</p>
+    <p>Chronométreur : '.(rwmb_meta("lbc_chronometreur")).'.</p>
+    <p>Équipes : '.(rwmb_meta("lbc_equipe_1")).' vs '.(rwmb_meta("lbc_equipe_2")).'.</p>
+    <p>Catégorie : '.(rwmb_meta("lbc_categorie")).'.</p>
+    <p>Résultats : <a href="http://www.fédération-basket.fr/lurebelfort18122016">Voir les résultats</a></p>';
 }
  ?>
 
