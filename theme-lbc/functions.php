@@ -158,7 +158,7 @@ function ajout_meta_boxes($meta_boxes)
         // le titre de la boîte
         'title' => 'Date',
         // le type ou les types ou sera affiché cette "boîte" (séparé par des virgules)
-        'pages' => array('actualites', 'matchs','evenement'),
+        'pages' => array('actualites', 'matchs', 'evenement'),
         // La liste des champs de formulaire affiché par la "boîte"
         'fields' => array(
             // Répeter pour chaque champ : ses options
@@ -173,20 +173,20 @@ function ajout_meta_boxes($meta_boxes)
         )
     );
 
-    // Actualité à la une
+    // Match exterieur
     $meta_boxes[] = array(
         // le titre de la boîte
-        'title' => 'Actualité à la une',
+        'title' => 'Match extérieur',
         // le type ou les types ou sera affiché cette "boîte" (séparé par des virgules)
-        'pages' => array('actualites'),
+        'pages' => array('matchs'),
         // La liste des champs de formulaire affiché par la "boîte"
         'fields' => array(
             // Répeter pour chaque champ : ses options
             array(
                 // Son nom affiché
-                'name' => 'Actualité à la une',
+                'name' => 'Match exterieur',
                 // Un identifiant unique, utilisé pour lire la valeur en PHP
-                'id' => 'lbc_actu_a_la_une',
+                'id' => 'lbc_match_ext',
                 // son type
                 'type' => 'checkbox',
             ),
@@ -525,7 +525,6 @@ function ajout_meta_boxes($meta_boxes)
 }
 
 
-
 add_filter('pre_get_posts', 'modifie_requete_wp');
 function modifie_requete_wp($query)
 {
@@ -535,14 +534,36 @@ function modifie_requete_wp($query)
         // Limite à un résultat
         $query->query_vars['posts_per_page'] = 1;
     }
+
+
+    
+
+
+//A CORRIGER
+    // if ( $query->is_post_type_archive('matchs') ) {
+    //     echo "<script>alert(\"current page = matchs\")</script>";
+    //
+    //     //Date match
+    //     $date_match_2 = rwmb_meta("lbc_date");
+    //     echo "date match = ".rwmb_meta("lbc_date");
+    //
+    //     //Date server
+    //     $time = current_time( 'Y-m-d');
+    //     echo "date server = ".$time;
+    //
+    //     if($date_match_2 < $time ) {
+    //
+    //     }
+    // }
 }
 
 /**
  * Pour aider à trouver les templates à utiliser
  */
-function debug_template() {
+function debug_template()
+{
     global $template;
-    $affiche_template = print_r( $template , true );
+    $affiche_template = print_r($template, true);
     $affiche_body_class = print_r(get_body_class(), true);
     $affiche_debug = <<<EOD
 Fichier de template :
@@ -556,5 +577,6 @@ EOD;
     $json_debug = json_encode($affiche_debug);
     echo("<script>console.log($json_debug)</script>");
 }
+
 // Laisser ce code dans le rendu final. Le mettre en commentaire APRES que j'ai noté.
-add_action('wp_footer','debug_template');
+add_action('wp_footer', 'debug_template');

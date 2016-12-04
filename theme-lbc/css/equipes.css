@@ -25,6 +25,9 @@
   .post-type-archive-equipes #container .equipe .description p {
     font-size: 1.2rem;
   }
+  .post-type-archive-equipes #container .equipe .description .num_tel {
+    color: white;
+  }
 }
 @media (min-width: 700px) and (max-width: 900px) {
   .post-type-archive-equipes #container {
@@ -52,6 +55,9 @@
   }
   .post-type-archive-equipes #container .equipe .description p {
     font-size: 1.7rem;
+  }
+  .post-type-archive-equipes #container .equipe .description .num_tel {
+    color: white;
   }
 }
 @media (min-width: 900px) {
@@ -86,5 +92,8 @@
   }
   .post-type-archive-equipes #container .equipe .description p {
     font-size: 1.7rem;
+  }
+  .post-type-archive-equipes #container .equipe .description .num_tel {
+    color: white;
   }
 }

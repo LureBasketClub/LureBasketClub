@@ -8,7 +8,7 @@
         <a href="<?php the_permalink(); ?>" class="actu">
             <?php the_post_thumbnail(); ?>
             <h3><?php the_title(); ?></h3>
-            <time><?php print_r(rwmb_meta("lbc_date")); ?></time>
+            <time><?php echo(rwmb_meta("lbc_date")); ?></time>
         </a>
         <?php endwhile; ?>
     </div>

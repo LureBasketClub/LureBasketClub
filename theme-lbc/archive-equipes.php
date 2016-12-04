@@ -6,10 +6,9 @@
             <?php the_post_thumbnail('portrait'); ?>
             <div class="description">
                 <h4><?php the_title(); ?></h4>
-                <p>Entraineur : <?php print_r(rwmb_meta("lbc_entraineur")); ?>
-                    - <?php print_r(rwmb_meta("lbc_num_tel")); ?>.</p>
-                <p>Couleur maillots et sponsors : <?php print_r(rwmb_meta("lbc_couleur_maillot_texte")); ?>
-                    , <?php print_r(rwmb_meta("lbc_sponsors")); ?>.</p>
+                <p>Entraineur : <?php echo(rwmb_meta("lbc_entraineur")); ?>
+                <p>Couleur maillots et sponsors : <?php echo(rwmb_meta("lbc_couleur_maillot_texte")); ?>
+                    , <?php echo(rwmb_meta("lbc_sponsors")); ?>.</p>
             </div>
         </div>
     <?php endwhile ?>
