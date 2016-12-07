@@ -5,7 +5,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Lure Basket Club</title>
+    <title>Document</title>
     <?php wp_head(); ?>
 </head>
 
@@ -75,6 +75,7 @@
                   <li><a href="<?php echo get_permalink(get_page_by_title("informations pratiques")); ?>">Informations pratiques</a></li>
                   <li><a href="<?php echo get_permalink(get_page_by_title('formations'))?>">Formations</a></li>
                   <li><a href="<?php echo esc_url(get_post_type_archive_link("galerie")); ?>">Galerie</a></li>
+                  <li><a href="<?php echo esc_url(get_post_type_archive_link("boutique")); ?>">Boutique</a></li>
               </ul>
           </nav>
       </div>

@@ -6,7 +6,7 @@
         <?php $listImagesID = rwmb_meta("lbc_photo_evenement", array('multiple' => true));
         foreach($listImagesID as $imageID => $imageObj):
         ?>
-            <div href="<?php the_permalink(); ?>" class="actu">
+            <div class="actu">
                 <?php echo wp_get_attachment_image($imageID); ?>
             </div>
             <?php endforeach; ?>

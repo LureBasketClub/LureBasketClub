@@ -247,6 +247,9 @@
     flex-flow: row wrap;
   }
   .post-type-archive-matchs .container-match .container-single-match {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
     width: 50%;
   }
   .post-type-archive-matchs .date-match {

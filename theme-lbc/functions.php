@@ -35,6 +35,7 @@ function lure_basket_club_style()
     wp_enqueue_style('equipes', get_stylesheet_directory_uri() . '/css/equipes.css');
     wp_enqueue_style('contenu', get_stylesheet_directory_uri() . '/css/contenu.css');
     wp_enqueue_style('formations', get_stylesheet_directory_uri() . '/css/formations.css');
+    wp_enqueue_style('boutique', get_stylesheet_directory_uri() . '/css/boutique.css');
 
     wp_enqueue_script('menu', get_stylesheet_directory_uri() . '/js/menu.js');
 }
@@ -121,6 +122,19 @@ function create_post_type()
         )
     );
     flush_rewrite_rules(false);
+
+    register_post_type('boutique',
+        array(
+            'labels' => array(
+                'name' => __('Boutique'),
+                'singular_name' => __('Boutique')
+            ),
+            'public' => true,
+            'has_archive' => true,
+            'query_var' => true,
+            'supports' => array('title', 'thumbnail','custom-fields'),
+        )
+    );
 }
 
 add_action('init', 'ajout_taxonomy');
@@ -158,7 +172,7 @@ function ajout_meta_boxes($meta_boxes)
         // le titre de la boîte
         'title' => 'Date',
         // le type ou les types ou sera affiché cette "boîte" (séparé par des virgules)
-        'pages' => array('actualites', 'matchs', 'evenement'),
+        'pages' => array('actualites', 'matchs','evenement'),
         // La liste des champs de formulaire affiché par la "boîte"
         'fields' => array(
             // Répeter pour chaque champ : ses options
@@ -169,6 +183,26 @@ function ajout_meta_boxes($meta_boxes)
                 'id' => 'lbc_date',
                 // son type
                 'type' => 'date',
+            ),
+        )
+    );
+
+    // Actualité à la une
+    $meta_boxes[] = array(
+        // le titre de la boîte
+        'title' => 'Actualité à la une',
+        // le type ou les types ou sera affiché cette "boîte" (séparé par des virgules)
+        'pages' => array('actualites'),
+        // La liste des champs de formulaire affiché par la "boîte"
+        'fields' => array(
+            // Répeter pour chaque champ : ses options
+            array(
+                // Son nom affiché
+                'name' => 'Actualité à la une',
+                // Un identifiant unique, utilisé pour lire la valeur en PHP
+                'id' => 'lbc_actu_a_la_une',
+                // son type
+                'type' => 'checkbox',
             ),
         )
     );
@@ -206,7 +240,7 @@ function ajout_meta_boxes($meta_boxes)
                 // Son nom affiché
                 'name' => 'Heure du début du match',
                 // Un identifiant unique, utilisé pour lire la valeur en PHP
-                'id' => 'lbc_heure_debut',
+                'id' => 'lbc_heure',
                 // son type
                 'type' => 'time',
             ),
@@ -493,8 +527,47 @@ function ajout_meta_boxes($meta_boxes)
         )
     );
 
+    $meta_boxes[] = array(
+        // le titre de la boîte
+        'title' => 'Prix',
+        // le type ou les types ou sera affiché cette "boîte" (séparé par des virgules)
+        'pages' => array('boutique'),
+        // La liste des champs de formulaire affiché par la "boîte"
+        'fields' => array(
+            // Répeter pour chaque champ : ses options
+            array(
+                // Son nom affiché
+                'name' => 'Prix',
+                // Un identifiant unique, utilisé pour lire la valeur en PHP
+                'id' => 'lbc_prix',
+                // son type
+                'type' => 'text',
+            ),
+        )
+    );
+
+    $meta_boxes[] = array(
+        // le titre de la boîte
+        'title' => 'Lien de l\'article',
+        // le type ou les types ou sera affiché cette "boîte" (séparé par des virgules)
+        'pages' => array('boutique'),
+        // La liste des champs de formulaire affiché par la "boîte"
+        'fields' => array(
+            // Répeter pour chaque champ : ses options
+            array(
+                // Son nom affiché
+                'name' => 'Lien de l\'article',
+                // Un identifiant unique, utilisé pour lire la valeur en PHP
+                'id' => 'lbc_lien_article',
+                // son type
+                'type' => 'text',
+            ),
+        )
+    );
+
     return $meta_boxes;
 }
+
 
 
 add_filter('pre_get_posts', 'modifie_requete_wp');
@@ -502,40 +575,26 @@ function modifie_requete_wp($query)
 {
     // Est appelé pour chaque page. Testez si c'est la requête que vous voulez changer.
     // Test si page d'accueil (front-page.php)
-    if ($query->is_home()) {
-        // Limite à un résultat
-        $query->query_vars['posts_per_page'] = 1;
+
+    if ($query->is_post_type_archive('matchs')) {
+        $query->query_vars['meta_key'] = "lbc_date";
+        $query->query_vars['meta_value'] = current_time('Y-m-d') ;
+        $query->query_vars['meta_compare'] = '>' ;
     }
 
-
-    
-
-
-//A CORRIGER
-    // if ( $query->is_post_type_archive('matchs') ) {
-    //     echo "<script>alert(\"current page = matchs\")</script>";
-    //
-    //     //Date match
-    //     $date_match_2 = rwmb_meta("lbc_date");
-    //     echo "date match = ".rwmb_meta("lbc_date");
-    //
-    //     //Date server
-    //     $time = current_time( 'Y-m-d');
-    //     echo "date server = ".$time;
-    //
-    //     if($date_match_2 < $time ) {
-    //
-    //     }
-    // }
+    if ($query->is_home()) {
+        $query->query_vars['meta_key'] = "lbc_date";
+        $query->query_vars['meta_value'] = current_time('Y-m-d') ;
+        $query->query_vars['meta_compare'] = '>' ;
+    }
 }
 
 /**
  * Pour aider à trouver les templates à utiliser
  */
-function debug_template()
-{
+function debug_template() {
     global $template;
-    $affiche_template = print_r($template, true);
+    $affiche_template = print_r( $template , true );
     $affiche_body_class = print_r(get_body_class(), true);
     $affiche_debug = <<<EOD
 Fichier de template :
@@ -549,6 +608,5 @@ EOD;
     $json_debug = json_encode($affiche_debug);
     echo("<script>console.log($json_debug)</script>");
 }
-
 // Laisser ce code dans le rendu final. Le mettre en commentaire APRES que j'ai noté.
-add_action('wp_footer', 'debug_template');
+add_action('wp_footer','debug_template');
