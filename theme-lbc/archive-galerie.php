@@ -1,7 +1,7 @@
 <?php get_header() ?>
 
 <div id="container">
-    <h2>Album</h2>
+    <h2>Saisons</h2>
     <div id="grid">
         <?php
         // Le nom de la taxonomie
@@ -21,7 +21,7 @@
             )); ?>
 
         <a href="<?php echo esc_url(get_term_link($a_term, TAXONOMY)) ?>" rel="tag" class="actu">
-            <?php the_post_thumbnail('a_la_une'); ?>
+            <div class="container-thumbnail"><?php the_post_thumbnail('a_la_une'); ?></div>
             <h3><?php echo esc_html($a_term->name); ?></h3>
         </a>
 

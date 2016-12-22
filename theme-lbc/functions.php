@@ -38,6 +38,8 @@ function lure_basket_club_style()
     wp_enqueue_style('boutique', get_stylesheet_directory_uri() . '/css/boutique.css');
 
     wp_enqueue_script('menu', get_stylesheet_directory_uri() . '/js/menu.js');
+    wp_enqueue_script('jquery3.1.1', get_stylesheet_directory_uri() . '/js/jquery-3.1.1.min.js');
+
 }
 
 // Ajout type custom
@@ -70,6 +72,8 @@ function create_post_type()
             'supports' => array('title', 'editor', 'excerpt', 'thumbnail', 'custom-fields', 'revisions'),
         )
     );
+
+    
     register_post_type('equipes',
         array(
             'labels' => array(
@@ -143,7 +147,7 @@ function ajout_taxonomy()
     // répétez pour chaque taxonomie : lui donner un nom ici 'competences'
     register_taxonomy('saisons',
         // le type ou les types classés par cette taxonomie (séparé par des virgules)
-        array('evenement',),
+        array('evenement'),
         array(
             'label' => __('saisons'),
             'hierarchical' => true
@@ -187,46 +191,6 @@ function ajout_meta_boxes($meta_boxes)
         )
     );
 
-    // Actualité à la une
-    $meta_boxes[] = array(
-        // le titre de la boîte
-        'title' => 'Actualité à la une',
-        // le type ou les types ou sera affiché cette "boîte" (séparé par des virgules)
-        'pages' => array('actualites'),
-        // La liste des champs de formulaire affiché par la "boîte"
-        'fields' => array(
-            // Répeter pour chaque champ : ses options
-            array(
-                // Son nom affiché
-                'name' => 'Actualité à la une',
-                // Un identifiant unique, utilisé pour lire la valeur en PHP
-                'id' => 'lbc_actu_a_la_une',
-                // son type
-                'type' => 'checkbox',
-            ),
-        )
-    );
-
-    // Sous titre actualité
-    $meta_boxes[] = array(
-        // le titre de la boîte
-        'title' => 'sous_titre_actualite',
-        // le type ou les types ou sera affiché cette "boîte" (séparé par des virgules)
-        'pages' => array('actualites'),
-        // La liste des champs de formulaire affiché par la "boîte"
-        'fields' => array(
-            // Répeter pour chaque champ : ses options
-            array(
-                // Son nom affiché
-                'name' => 'Sous-titre',
-                // Un identifiant unique, utilisé pour lire la valeur en PHP
-                'id' => 'lbc_sous-titre',
-                // son type
-                'type' => 'text',
-            ),
-        )
-    );
-
     // Heure
     $meta_boxes[] = array(
         // le titre de la boîte
@@ -244,8 +208,19 @@ function ajout_meta_boxes($meta_boxes)
                 // son type
                 'type' => 'time',
             ),
+
+            array(
+                // Son nom affiché
+                'name' => 'Heure de rendez-vous',
+                // Un identifiant unique, utilisé pour lire la valeur en PHP
+                'id' => 'lbc_heure_rdv',
+                // son type
+                'type' => 'time',
+            ),
         )
     );
+
+
 
     // Nom entraineur
     $meta_boxes[] = array(
@@ -331,6 +306,26 @@ function ajout_meta_boxes($meta_boxes)
         )
     );
 
+    // Liens sponsors
+    $meta_boxes[] = array(
+        // le titre de la boîte
+        'title' => 'Lien du sponsor',
+        // le type ou les types ou sera affiché cette "boîte" (séparé par des virgules)
+        'pages' => array('sponsors'),
+        // La liste des champs de formulaire affiché par la "boîte"
+        'fields' => array(
+            // Répeter pour chaque champ : ses options
+            array(
+                // Son nom affiché
+                'name' => 'Lien du sponsor',
+                // Un identifiant unique, utilisé pour lire la valeur en PHP
+                'id' => 'lbc_lien_sponsor',
+                // son type
+                'type' => 'text',
+            ),
+        )
+    );
+
     // Couleur maillot (texte)
     $meta_boxes[] = array(
         // le titre de la boîte
@@ -393,26 +388,6 @@ function ajout_meta_boxes($meta_boxes)
                 'name' => 'Equipe extérieure',
                 // Un identifiant unique, utilisé pour lire la valeur en PHP
                 'id' => 'lbc_equipe_2',
-                // son type
-                'type' => 'text',
-            ),
-        )
-    );
-
-    // Catégorie
-    $meta_boxes[] = array(
-        // le titre de la boîte
-        'title' => 'Categorie',
-        // le type ou les types ou sera affiché cette "boîte" (séparé par des virgules)
-        'pages' => array('matchs'),
-        // La liste des champs de formulaire affiché par la "boîte"
-        'fields' => array(
-            // Répeter pour chaque champ : ses options
-            array(
-                // Son nom affiché
-                'name' => 'Catégorie',
-                // Un identifiant unique, utilisé pour lire la valeur en PHP
-                'id' => 'lbc_categorie',
                 // son type
                 'type' => 'text',
             ),
@@ -546,25 +521,6 @@ function ajout_meta_boxes($meta_boxes)
         )
     );
 
-    $meta_boxes[] = array(
-        // le titre de la boîte
-        'title' => 'Lien de l\'article',
-        // le type ou les types ou sera affiché cette "boîte" (séparé par des virgules)
-        'pages' => array('boutique'),
-        // La liste des champs de formulaire affiché par la "boîte"
-        'fields' => array(
-            // Répeter pour chaque champ : ses options
-            array(
-                // Son nom affiché
-                'name' => 'Lien de l\'article',
-                // Un identifiant unique, utilisé pour lire la valeur en PHP
-                'id' => 'lbc_lien_article',
-                // son type
-                'type' => 'text',
-            ),
-        )
-    );
-
     return $meta_boxes;
 }
 
@@ -589,24 +545,3 @@ function modifie_requete_wp($query)
     }
 }
 
-/**
- * Pour aider à trouver les templates à utiliser
- */
-function debug_template() {
-    global $template;
-    $affiche_template = print_r( $template , true );
-    $affiche_body_class = print_r(get_body_class(), true);
-    $affiche_debug = <<<EOD
-Fichier de template :
-$affiche_template
-Body class
-$affiche_body_class
-EOD;
-    // en commentaire dans le code HTML
-    echo("<!--\n$affiche_debug\n-->");
-    // Par JS dans la console
-    $json_debug = json_encode($affiche_debug);
-    echo("<script>console.log($json_debug)</script>");
-}
-// Laisser ce code dans le rendu final. Le mettre en commentaire APRES que j'ai noté.
-add_action('wp_footer','debug_template');

@@ -60,6 +60,9 @@
   .single-matchs #container .match .horaire .categorie {
     font-size: 1.4rem;
   }
+  .single-matchs #container .match .horaire .categorie::first-letter {
+    text-transform: uppercase;
+  }
   .single-matchs #container .container-text {
     border-left: solid 1px #d21b1b;
     margin: 0 0 0 25px;
@@ -154,6 +157,9 @@
   }
   .single-matchs #container .match .horaire .categorie {
     font-size: 1.7rem;
+  }
+  .single-matchs #container .match .horaire .categorie::first-letter {
+    text-transform: uppercase;
   }
   .single-matchs #container h3 {
     font-size: 2.2rem;
@@ -268,6 +274,9 @@
   .single-matchs #container .match .horaire .categorie {
     font-size: 1.7rem;
   }
+  .single-matchs #container .match .horaire .categorie::first-letter {
+    text-transform: uppercase;
+  }
   .single-matchs #container h3 {
     font-size: 2.2rem;
     background-color: #d21b1b;
@@ -293,8 +302,11 @@
   .single-matchs #container .container-text p a {
     color: #d21b1b;
   }
-  .single-matchs #container .container-text .indenté {
-    margin-left: 30px;
+  .single-matchs #container .container-text .categorie {
+    font-size: 1.7rem;
+  }
+  .single-matchs #container .container-text .categorie::first-letter {
+    text-transform: uppercase;
   }
   .single-matchs #container #retour-calendrier {
     position: relative;

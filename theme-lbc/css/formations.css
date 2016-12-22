@@ -109,10 +109,10 @@
     margin-top: 0;
     padding-top: 1em;
   }
-  .page #container .container-text p a {
+  .page #container .container-text a {
     color: #d21b1b;
   }
-  .page #container .container-text p .documents {
+  .page #container .container-text .documents {
     font-size: 1.7rem;
     margin-left: 15px;
     display: block;

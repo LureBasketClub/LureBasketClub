@@ -20,9 +20,13 @@
                         </svg>
                 <span class="nom-equipe"><?php echo(rwmb_meta("lbc_equipe_1")); ?></span>
             </div>
+
+            <?php $terms = get_the_terms($post->ID, 'categorie-equipe');
+            foreach ($terms as $term) ?>
+
             <div class="horaire">
                 <time datetime=" <?php echo(rwmb_meta("lbc_heure")) ?>:00"><?php echo(rwmb_meta("lbc_heure")) ?></time>
-                <span class="categorie">Senior</span>
+                <span class="categorie"><?php echo $term->slug ?></span>
             </div>
             <div class="equipe">
                 <svg version="1.1" class="logo-equipe-2" xmlns="http://www.w3.org/2000/svg"
@@ -45,26 +49,28 @@
 
     <div class="container-text">
         <p>Jour : <?php echo $date_match ?></p>
-        <p>Horaire : à <time datetime=" <?php echo(rwmb_meta("lbc_heure")) ?>:00"><?php echo(rwmb_meta("lbc_heure")) ?></time>.</p>
+        <p>Horaire : <time datetime=" <?php echo(rwmb_meta("lbc_heure")) ?>:00"><?php echo(rwmb_meta("lbc_heure")) ?></time>.</p>
         <p>Lieu : <?php echo(rwmb_meta("lbc_salle")); ?> à <?php echo(rwmb_meta("lbc_ville")); ?>.</p>
 
         <?php $ext = (rwmb_meta("lbc_match_ext"));
 
         ?>
 
-<?php if ((rwmb_meta("lbc_equipe_2"))=='Lure'): ?>
-    <div id="officiels">
-    <p>Heure de rendez-vous : <?php echo(rwmb_meta("lbc_heure_debut")) ?> .</p>
-  </div>
+        <?php if ((rwmb_meta("lbc_equipe_2")) == 'Lure'): ?>
+            <div id="officiels">
+                <p>Heure de rendez-vous : <?php echo(rwmb_meta("lbc_heure_rdv")) ?> .</p>
+
+            </div>
 
         <?php else: ?>
-    <p>Arbitres : <?php echo(rwmb_meta("lbc_arbitre_1")) ?> et <?php echo (rwmb_meta("lbc_arbitre_2")) ?>.</p>
-    <p>Marqueur : <?php echo (rwmb_meta("lbc_marqueur")) ?>.</p>
-    <p>Chronométreur : <?php echo (rwmb_meta("lbc_chronometreur")) ?>.</p>
-    <p>Équipes : <?php echo (rwmb_meta("lbc_equipe_1")) ?> vs <?php echo (rwmb_meta("lbc_equipe_2")) ?>.</p>
-    <p>Catégorie : <?php echo (rwmb_meta("lbc_categorie")) ?>.</p>
-    <p>Résultats : <a href="http://www.fédération-basket.fr/lurebelfort18122016">Voir les résultats</a></p>;
+            <p>Arbitres : <?php echo(rwmb_meta("lbc_arbitre_1")) ?> et <?php echo(rwmb_meta("lbc_arbitre_2")) ?>.</p>
+            <p>Marqueur : <?php echo(rwmb_meta("lbc_marqueur")) ?>.</p>
+            <p>Chronométreur : <?php echo(rwmb_meta("lbc_chronometreur")) ?>.</p>
+
         <?php endif; ?>
+        <p>Équipes : <?php echo(rwmb_meta("lbc_equipe_1")) ?> vs <?php echo(rwmb_meta("lbc_equipe_2")) ?>.</p>
+        <p>Catégorie : <span class="categorie"><?php echo $term->slug ?></span>.</p>
+        <p>Résultats : <a href=" http://resultats.ffbb.com/organisation/2928.html">Voir les résultats</a></p>
 
     </div>
 

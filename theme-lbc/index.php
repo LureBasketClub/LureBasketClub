@@ -1,6 +1,7 @@
 <?php get_header() ?>
 
 <div id="container">
+    <h1>Site en maintenance !</h1>
     <div id="actu-match">
 
         <?php
@@ -78,7 +79,7 @@
                 </a>
             <?php endwhile; ?>
             <a href="<?php echo esc_url(get_post_type_archive_link("matchs")); ?>" class="more-match">
-                <div>Voir tout les match</div>
+                <div>Voir tous les match</div>
             </a>
         </div>
 
@@ -87,10 +88,12 @@
     <div id="dernieres-actus">
         <h2>Dernières actualités</h2>
         <div class="container">
+            <?php $compteur_actu=0 ?>
             <?php
             // Fais une requête sur les actu, limitée à 1 résultats.
             $actu = new WP_Query('post_type=actualites&posts_per_page=3');
             while ($actu->have_posts()): $actu->the_post(); ?>
+                <?php $compteur_actu = $compteur_actu + 1?>
 
                 <a href="<?php the_permalink(); ?>" class="actu">
                     <figure><?php the_post_thumbnail('more actu'); ?></figure>

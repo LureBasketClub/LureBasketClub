@@ -1,3 +1,9 @@
+.equipes-realisation {
+  color: white;
+  display: inline-block;
+  max-width: 1400px;
+  margin: 0 auto;
+}
 @media (max-width: 700px) {
   footer h2 {
     margin-left: 25px;
@@ -25,10 +31,15 @@
     height: 100%;
   }
   footer #contact {
+    margin-right: 100px;
+  }
+  footer #contact,
+  footer #equipes-realisation {
     margin: 0 25px;
     width: 100%;
   }
-  footer #contact ul {
+  footer #contact ul,
+  footer #equipes-realisation ul {
     height: auto;
   }
   footer #nav-contact {
@@ -52,13 +63,12 @@
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    height: 160px;
   }
   footer #nav-contact ul li {
-    width: calc(50% - 50px);
     list-style: none;
     opacity: 0.8;
     margin-bottom: 20px;
+    margin-right: 50px;
   }
   footer #nav-contact ul li a {
     color: white;
@@ -97,10 +107,15 @@
     flex-wrap: wrap;
   }
   footer #contact {
+    margin-right: 100px;
+  }
+  footer #contact,
+  footer #equipes-realisation {
     margin: 0 25px;
     width: 100%;
   }
-  footer #contact ul {
+  footer #contact ul,
+  footer #equipes-realisation ul {
     height: auto;
   }
   footer #nav-contact nav {
@@ -120,13 +135,12 @@
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    height: 190px;
   }
   footer #nav-contact ul li {
-    width: calc(50% - 50px);
     list-style: none;
     opacity: 0.8;
     margin-bottom: 20px;
+    margin-right: 50px;
   }
   footer #nav-contact ul li a {
     color: white;
@@ -179,8 +193,7 @@
     margin: 0 100px 0 0;
   }
   footer #contact {
-    margin: 0;
-    width: 480px;
+    margin-right: 100px;
   }
   footer #nav-contact nav {
     width: 480px;
@@ -198,14 +211,14 @@
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    height: 120px;
+    height: 140px;
   }
   footer #nav-contact ul li {
-    width: calc(50% - 50px);
     list-style: none;
     opacity: 0.8;
     font-size: 1.7rem;
     margin-bottom: 8px;
+    margin-right: 50px;
     transition: 0.2s ease;
   }
   footer #nav-contact ul li a {

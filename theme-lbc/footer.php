@@ -8,7 +8,7 @@
             $sponsors = new WP_Query('post_type=sponsors');
             while ($sponsors->have_posts()): $sponsors->the_post(); ?>
             <li>
-                    <?php echo wp_get_attachment_image(get_post_meta($post->ID,"lbc_logo_sponsors")[0],'paysage'); ?>
+                <a href="<?php echo(rwmb_meta("lbc_lien_sponsor")) ?>"><?php echo wp_get_attachment_image(get_post_meta($post->ID,"lbc_logo_sponsors")[0],'paysage'); ?></a>
             </li>
             <?php endwhile; ?>
         </ul>
@@ -32,10 +32,20 @@
                 <h4>Contact</h4>
                 <ul>
                     <li><a href="https://www.facebook.com/Lure-Basket-Club-323567384381378/">Facebook</a></li>
-                    <li><a href="mailto:lure.basket.club@free.fr">E-Mail</a></li>
+                    <li><a href="mailto:lure.basket.club@free.fr">Email</a></li>
+                </ul>
+            </div>
+            <div id="equipes-realisation">
+                <h4>Réalisation</h4>
+                <ul>
+                    <li>Robin Minervini</li>
+                    <li>Mélody Soria</li>
+                    <li>Anaelle Guay</li>
+                    <li>Valentin Loll</li>
                 </ul>
             </div>
         </div>
+
     </div>
 </footer>
 
