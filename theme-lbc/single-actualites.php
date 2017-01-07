@@ -1,3 +1,15 @@
+<?php
+/**
+ * \file     single-actualites.php
+ * \author    Robin Minervini, Valentin Loll, Melody Soria, Anaëlle Guay
+ * \version   1.0
+ * \date       2 Novembre 2016
+ * \brief      Page d'une actualité
+ *
+ * \details  Affiche le contenu d'une actualité, composée d'une date, d'une image à la une, et de texte.
+ * 
+ */
+?>
 <?php get_header(); ?>
 
 
@@ -10,8 +22,16 @@
             <div class="container-text">
                 <?php the_content(); ?>
             </div>
-        <?php endwhile; ?>
-        <?php endif; ?>
+        <?php
+            /**
+             * \brief      Termine la boucle de récupération de l'actualité
+             */
+        endwhile; ?>
+        <?php
+            /**
+             * \brief      Termine le test de la boucle de récupération de l'actualité
+             */
+        endif; ?>
     </article>
 
     <a href="<?php echo esc_url(get_post_type_archive_link("actualites")); ?>" id="revenir-actu">

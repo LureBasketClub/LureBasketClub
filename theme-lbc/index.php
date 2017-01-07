@@ -1,11 +1,24 @@
+<?php
+/**
+ * \file          index.php
+ * \author    Robin Minervini, Valentin Loll, Melody Soria, Anaëlle Guay
+ * \version   1.0
+ * \date       7 Décembre 2016
+ * \brief       Page d'accueil
+ *
+ * \details    Page d'accueil qui affiche les 5 prochains matchs et les 3 actualités à venir
+ */
+?>
 <?php get_header() ?>
 
 <div id="container">
-    <h1>Site en maintenance !</h1>
     <div id="actu-match">
 
         <?php
-        // Fais une requête sur les actu, limitée à 1 résultats.
+        /**
+         * \brief      Requète personnalisée pour n'afficher qu'une actualité.
+         * \details    Modifie la requète WordPress pour récupérer la dernière actualité.
+         */
         $actu = new WP_Query('post_type=actualites&posts_per_page=1');
         while ($actu->have_posts()): $actu->the_post(); ?>
             <a href="<?php the_permalink(); ?>" class="lien-main">
@@ -17,30 +30,61 @@
                     </div>
                 </article>
             </a>
-        <?php endwhile; ?>
+        <?php
+            /**
+             * \brief     Termine la boucle de récupération des actualités
+             */
+        endwhile; ?>
 
         <div class="calendrier-matchs">
             <h2>Calendrier des matchs</h2>
 
-            <?php $last_date_match = ''; ?>
+            <?php
+            /**
+             * \brief      Date du dernier match de la boucle
+             * \details Initialise la date du dernier match, utilisé pour savoir si il est nécessaire de répété la date entre 2 matchs consécutif lors de l'affichage des matchs.
+             */
+            $last_date_match = ''; ?>
             <?php $date_match = date_i18n(' l d F ', strtotime(rwmb_meta("lbc_date"))); ?>
 
-            <?php $matchs = new WP_Query('post_type=matchs&posts_per_page=5');
+            <?php
+            /**
+             * \brief      Requête personnalisée pour afficher les 5 prochains matchs à venir.
+             * \details Modifie la requête WordPress pour récupérer les 5 prochains matchs.
+             */
+            $matchs = new WP_Query('post_type=matchs&posts_per_page=5');
             while ($matchs->have_posts()): $matchs->the_post(); ?>
 
 
-                <?php $time = current_time('Y-m-d'); ?>
-                <?php $date_match = date_i18n(' l d F ', strtotime(rwmb_meta("lbc_date"))); ?>
+                <?php
+                /**
+                 * \brief Récupère l'heure du server
+                 * \details Récupère l'heure du serveur et le stoch au format aaaa-mm-jj
+                 */
+                $time = current_time('Y-m-d'); ?>
+                <?php
+                /**
+                 * \brief      Date du match
+                 * \details Date du match au format jj/mm/aaaa
+                 */
+                $date_match = date_i18n(' l d F ', strtotime(rwmb_meta("lbc_date"))); ?>
 
             <?php
+                /**
+                 * \brief Récupère la taxonomie "catégorie-equipe"
+                 * \details Récupère la taxonomie "categorie-equipe" et ressort la taxonomie (catégorie) du match.
+                 */
             $terms = get_the_terms($post->ID, 'categorie-equipe');
             foreach ($terms as $term); ?>
 
-                <?php if ($last_date_match != $date_match): ?>
+                <?php
+                /**
+                 * \brief      Test la date courrante et la date précédente testée.
+                 * \details Test la date du match courrant et la date précédente. Si les 2 sont égales, la date n'est pas réaffichée.
+                 */
+                if ($last_date_match != $date_match): ?>
                     <h4 class="date-match"><?php echo $date_match ?></h4>
-                    <?php $last_date_match = $date_match;
-                endif;
-                ?>
+                    <?php $last_date_match = $date_match; endif;?>
 
                 <a href=" <?php echo get_permalink( $post->ID) ?>" class="match">
                     <div class="equipe">
@@ -77,7 +121,11 @@
                         <span class="nom-equipe"><?php echo (rwmb_meta("lbc_equipe_2")) ?></span>
                     </div>
                 </a>
-            <?php endwhile; ?>
+            <?php
+                /**
+                 * \brief     Termine la boucle de récupération des matchs
+                 */
+            endwhile; ?>
             <a href="<?php echo esc_url(get_post_type_archive_link("matchs")); ?>" class="more-match">
                 <div>Voir tous les match</div>
             </a>
@@ -90,7 +138,9 @@
         <div class="container">
             <?php $compteur_actu=0 ?>
             <?php
-            // Fais une requête sur les actu, limitée à 1 résultats.
+            /**
+             * \brief      Fait une requête sur les actu, limitée à 3 résultats.
+             */
             $actu = new WP_Query('post_type=actualites&posts_per_page=3');
             while ($actu->have_posts()): $actu->the_post(); ?>
                 <?php $compteur_actu = $compteur_actu + 1?>
@@ -106,7 +156,11 @@
                         <div class="lire-article">Lire l'article</div>
                     </div>
                 </a>
-            <?php endwhile; ?>
+            <?php
+                /**
+                 * \brief     Termine la boucle de récupération des actualités
+                 */
+            endwhile; ?>
 
             <a href="<?php echo esc_url(get_post_type_archive_link("actualites")); ?>" id="more-actu">+</a>
         </div>

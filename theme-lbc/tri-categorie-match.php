@@ -1,19 +1,58 @@
 <?php
+/**
+ * \file     tri-categorie-match.php
+ * \author    Robin Minervini, Valentin Loll, Melody Soria, Anaëlle Guay
+ * \version   1.0
+ * \date       21 Décembre 2016
+ * \brief      Tri des matchs par catégorie
+ *
+ * \details Requete AJAX pour trier les matchs en fonction de la catégorie choisie dans archive-match.php
+ */
+?>
+<?php
+/**
+ * \brief Permet l'utilisation d'un fichier externe à WordPress
+ */
 define('WP_USE_THEMES', false);
 require_once('../../../wp-load.php'); ?>
 
-<?php $last_date_match = ''; ?>
+<?php
+/**
+ * \brief      Date du dernier match de la boucle
+ * \details Initialise la date du dernier match, utilisé pour savoir si il est nécessaire de répété la date entre 2 matchs consécutif lors de l'affichage des matchs.
+ */
+$last_date_match = ''; ?>
 
-<?php $matchs = new WP_Query('post_type=matchs');
+<?php
+/**
+ * \brief     Requête personnalisée pour ressortir tout les matchs
+ */
+$matchs = new WP_Query('post_type=matchs');
 while ($matchs->have_posts()): $matchs->the_post(); ?>
 
-    <?php $date_match = date_i18n(' l d F ', strtotime(rwmb_meta("lbc_date"))); ?>
-    <?php $terms = get_the_terms($post->ID, 'categorie-equipe');
+    <?php
+    /**
+     * \brief      Date du match
+     * \details Date du match au format jj/mm/aaaa
+     */
+    $date_match = date_i18n(' l d F ', strtotime(rwmb_meta("lbc_date"))); ?>
+    <?php
+    /**
+     * \brief Récupère la taxonomie "catégorie-equipe"
+     * \details Récupère la taxonomie "categorie-equipe" et ressort la taxonomie (catégorie) du match.
+     */
+    $terms = get_the_terms($post->ID, 'categorie-equipe');
     foreach ($terms as $term) ?>
 
     <?php $taxonomy = $term->slug ?>
 
-    <?php $vs = $_GET['vs'] ?>
+    <?php
+    /**
+     * \brief Récupère la valeur dans la variable 'vs'
+     * \details Récupère la valeur dans la variable 'vs' (Valeur Sélectionnée dans le select de archive-matchs.php), transmise par
+     * la requete AJAX de archive-matchs.php
+     */
+    $vs = $_GET['vs'] ?>
     <?php if ($vs == $taxonomy): ?>
 
         <div class="container-single-match <?php echo $taxonomy ?>">
@@ -116,6 +155,10 @@ while ($matchs->have_posts()): $matchs->the_post(); ?>
             </a>
         </div>
     <?php endif; ?>
-<?php endwhile; ?>
+<?php
+    /**
+     * \brief Termine la boucle de récupération des matchs
+     */
+endwhile; ?>
 
 

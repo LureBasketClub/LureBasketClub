@@ -1,10 +1,25 @@
 </div>
+<?php
+/**
+ * \file      footer.php
+ * \author    Robin Minervini, Valentin Loll, Melody Soria, Anaëlle Guay
+ * \version   1.0
+ * \date       8 Décembre 2016
+ * \brief       Pied de page
+ *
+ * \details    Affiche les sponsors du club. Rappel de la navigation, contact du club, et équipe de réalisation du site.
+ */
+?>
 <footer>
     <div id="sponsors">
         <h2>Sponsors du club</h2>
 
         <ul>
             <?php
+            /**
+             * \brief      Requête personnalisée pour afficher les sponsors.
+             * \details Modifie la requête WordPress pour récupérer les sponsors.
+             */
             $sponsors = new WP_Query('post_type=sponsors');
             while ($sponsors->have_posts()): $sponsors->the_post(); ?>
             <li>

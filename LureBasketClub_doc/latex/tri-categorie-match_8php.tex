@@ -1,0 +1,111 @@
+\hypertarget{tri-categorie-match_8php}{}\section{C\+:/\+Users/\+Robin/\+Documents/\+Works/\+P\+R\+O\+J\+ET L\+U\+RE B\+A\+S\+K\+ET C\+L\+U\+B/\+Site/\+Lure\+Basket\+Club/theme-\/lbc/tri-\/categorie-\/match.php File Reference}
+\label{tri-categorie-match_8php}\index{C\+:/\+Users/\+Robin/\+Documents/\+Works/\+P\+R\+O\+J\+E\+T L\+U\+R\+E B\+A\+S\+K\+E\+T C\+L\+U\+B/\+Site/\+Lure\+Basket\+Club/theme-\/lbc/tri-\/categorie-\/match.\+php@{C\+:/\+Users/\+Robin/\+Documents/\+Works/\+P\+R\+O\+J\+E\+T L\+U\+R\+E B\+A\+S\+K\+E\+T C\+L\+U\+B/\+Site/\+Lure\+Basket\+Club/theme-\/lbc/tri-\/categorie-\/match.\+php}}
+
+
+Tri des matchs par catégorie.  
+
+
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{tri-categorie-match_8php_ae50604b6dd85409f240bf13253215ba4}{W\+P\+\_\+\+U\+S\+E\+\_\+\+T\+H\+E\+M\+ES} false
+\begin{DoxyCompactList}\small\item\em Permet l\textquotesingle{}utilisation d\textquotesingle{}un fichier externe à Word\+Press. \end{DoxyCompactList}\item 
+\hyperlink{tri-categorie-match_8php_ae59c5fee360f6a47ff7e4847a26a6509}{\$last\+\_\+date\+\_\+match} = \textquotesingle{}\textquotesingle{}
+\begin{DoxyCompactList}\small\item\em Date du dernier match de la boucle. \end{DoxyCompactList}\item 
+\hyperlink{tri-categorie-match_8php_a957f8b9f1c1240556780615c84d85db3}{\$matchs} = new W\+P\+\_\+\+Query(\textquotesingle{}post\+\_\+type=matchs\textquotesingle{})
+\begin{DoxyCompactList}\small\item\em Requête personnalisée pour ressortir tout les matchs. \end{DoxyCompactList}\item 
+\hyperlink{tri-categorie-match_8php_a9dccec06b3547f7c82bc8ade68a042a5}{\$date\+\_\+match} = date\+\_\+i18n(\textquotesingle{} l d F \textquotesingle{}, strtotime(rwmb\+\_\+meta(\char`\"{}lbc\+\_\+date\char`\"{})))
+\begin{DoxyCompactList}\small\item\em Date du match. \end{DoxyCompactList}\item 
+\hyperlink{tri-categorie-match_8php_ad6d756efb764174cfe7a6e9abc97e3eb}{\$terms} = get\+\_\+the\+\_\+terms(\$post-\/$>$ID, \textquotesingle{}categorie-\/equipe\textquotesingle{})
+\begin{DoxyCompactList}\small\item\em Récupère la taxonomie \char`\"{}catégorie-\/equipe\char`\"{}. \end{DoxyCompactList}\item 
+\hyperlink{single-matchs_8php_acef14cb9dd3a31dcc9b59c773f76807e}{foreach}( \$terms as \$term) ?$>$$<$?php \$taxonomy \$vsif( \$vs==\$taxonomy)(\$last\+\_\+date\+\_\+match !=\$date\+\_\+match) \hyperlink{tri-categorie-match_8php_a82cd33ca97ff99f2fcc5e9c81d65251b}{endif} = \$\+\_\+\+G\+ET\mbox{[}\textquotesingle{}vs\textquotesingle{}\mbox{]}
+\begin{DoxyCompactList}\small\item\em Récupère la valeur dans la variable \textquotesingle{}vs\textquotesingle{}. \end{DoxyCompactList}\item 
+\hyperlink{tri-categorie-match_8php_a1b05dae45f9e3f4c1fe86048550d2c5b}{endwhile}
+\begin{DoxyCompactList}\small\item\em Termine la boucle de récupération des matchs. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Tri des matchs par catégorie. 
+
+\begin{DoxyAuthor}{Author}
+Robin Minervini, Valentin Loll, Melody Soria, Anaëlle Guay 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+21 Décembre 2016
+\end{DoxyDate}
+Requete A\+J\+AX pour trier les matchs en fonction de la catégorie choisie dans archive-\/match.\+php 
+
+\subsection{Variable Documentation}
+\hypertarget{tri-categorie-match_8php_a9dccec06b3547f7c82bc8ade68a042a5}{}\label{tri-categorie-match_8php_a9dccec06b3547f7c82bc8ade68a042a5} 
+\index{tri-\/categorie-\/match.\+php@{tri-\/categorie-\/match.\+php}!\$date\+\_\+match@{\$date\+\_\+match}}
+\index{\$date\+\_\+match@{\$date\+\_\+match}!tri-\/categorie-\/match.\+php@{tri-\/categorie-\/match.\+php}}
+\subsubsection{\texorpdfstring{\$date\+\_\+match}{$date\_match}}
+{\footnotesize\ttfamily \$date\+\_\+match = date\+\_\+i18n(\textquotesingle{} l d F \textquotesingle{}, strtotime(rwmb\+\_\+meta(\char`\"{}lbc\+\_\+date\char`\"{})))}
+
+
+
+Date du match. 
+
+Date du match au format jj/mm/aaaa \hypertarget{tri-categorie-match_8php_ae59c5fee360f6a47ff7e4847a26a6509}{}\label{tri-categorie-match_8php_ae59c5fee360f6a47ff7e4847a26a6509} 
+\index{tri-\/categorie-\/match.\+php@{tri-\/categorie-\/match.\+php}!\$last\+\_\+date\+\_\+match@{\$last\+\_\+date\+\_\+match}}
+\index{\$last\+\_\+date\+\_\+match@{\$last\+\_\+date\+\_\+match}!tri-\/categorie-\/match.\+php@{tri-\/categorie-\/match.\+php}}
+\subsubsection{\texorpdfstring{\$last\+\_\+date\+\_\+match}{$last\_date\_match}}
+{\footnotesize\ttfamily \$last\+\_\+date\+\_\+match = \textquotesingle{}\textquotesingle{}}
+
+
+
+Date du dernier match de la boucle. 
+
+Initialise la date du dernier match, utilisé pour savoir si il est nécessaire de répété la date entre 2 matchs consécutif lors de l\textquotesingle{}affichage des matchs. \hypertarget{tri-categorie-match_8php_a957f8b9f1c1240556780615c84d85db3}{}\label{tri-categorie-match_8php_a957f8b9f1c1240556780615c84d85db3} 
+\index{tri-\/categorie-\/match.\+php@{tri-\/categorie-\/match.\+php}!\$matchs@{\$matchs}}
+\index{\$matchs@{\$matchs}!tri-\/categorie-\/match.\+php@{tri-\/categorie-\/match.\+php}}
+\subsubsection{\texorpdfstring{\$matchs}{$matchs}}
+{\footnotesize\ttfamily \$matchs = new W\+P\+\_\+\+Query(\textquotesingle{}post\+\_\+type=matchs\textquotesingle{})}
+
+
+
+Requête personnalisée pour ressortir tout les matchs. 
+
+\hypertarget{tri-categorie-match_8php_ad6d756efb764174cfe7a6e9abc97e3eb}{}\label{tri-categorie-match_8php_ad6d756efb764174cfe7a6e9abc97e3eb} 
+\index{tri-\/categorie-\/match.\+php@{tri-\/categorie-\/match.\+php}!\$terms@{\$terms}}
+\index{\$terms@{\$terms}!tri-\/categorie-\/match.\+php@{tri-\/categorie-\/match.\+php}}
+\subsubsection{\texorpdfstring{\$terms}{$terms}}
+{\footnotesize\ttfamily \$terms = get\+\_\+the\+\_\+terms(\$post-\/$>$ID, \textquotesingle{}categorie-\/equipe\textquotesingle{})}
+
+
+
+Récupère la taxonomie \char`\"{}catégorie-\/equipe\char`\"{}. 
+
+Récupère la taxonomie \char`\"{}categorie-\/equipe\char`\"{} et ressort la taxonomie (catégorie) du match. \hypertarget{tri-categorie-match_8php_a82cd33ca97ff99f2fcc5e9c81d65251b}{}\label{tri-categorie-match_8php_a82cd33ca97ff99f2fcc5e9c81d65251b} 
+\index{tri-\/categorie-\/match.\+php@{tri-\/categorie-\/match.\+php}!endif@{endif}}
+\index{endif@{endif}!tri-\/categorie-\/match.\+php@{tri-\/categorie-\/match.\+php}}
+\subsubsection{\texorpdfstring{endif}{endif}}
+{\footnotesize\ttfamily endif = \$\+\_\+\+G\+ET\mbox{[}\textquotesingle{}vs\textquotesingle{}\mbox{]}}
+
+
+
+Récupère la valeur dans la variable \textquotesingle{}vs\textquotesingle{}. 
+
+Récupère la valeur dans la variable \textquotesingle{}vs\textquotesingle{} (Valeur Sélectionnée dans le select de \hyperlink{archive-matchs_8php}{archive-\/matchs.\+php}), transmise par la requete A\+J\+AX de \hyperlink{archive-matchs_8php}{archive-\/matchs.\+php} \hypertarget{tri-categorie-match_8php_a1b05dae45f9e3f4c1fe86048550d2c5b}{}\label{tri-categorie-match_8php_a1b05dae45f9e3f4c1fe86048550d2c5b} 
+\index{tri-\/categorie-\/match.\+php@{tri-\/categorie-\/match.\+php}!endwhile@{endwhile}}
+\index{endwhile@{endwhile}!tri-\/categorie-\/match.\+php@{tri-\/categorie-\/match.\+php}}
+\subsubsection{\texorpdfstring{endwhile}{endwhile}}
+{\footnotesize\ttfamily endwhile}
+
+
+
+Termine la boucle de récupération des matchs. 
+
+\hypertarget{tri-categorie-match_8php_ae50604b6dd85409f240bf13253215ba4}{}\label{tri-categorie-match_8php_ae50604b6dd85409f240bf13253215ba4} 
+\index{tri-\/categorie-\/match.\+php@{tri-\/categorie-\/match.\+php}!W\+P\+\_\+\+U\+S\+E\+\_\+\+T\+H\+E\+M\+ES@{W\+P\+\_\+\+U\+S\+E\+\_\+\+T\+H\+E\+M\+ES}}
+\index{W\+P\+\_\+\+U\+S\+E\+\_\+\+T\+H\+E\+M\+ES@{W\+P\+\_\+\+U\+S\+E\+\_\+\+T\+H\+E\+M\+ES}!tri-\/categorie-\/match.\+php@{tri-\/categorie-\/match.\+php}}
+\subsubsection{\texorpdfstring{W\+P\+\_\+\+U\+S\+E\+\_\+\+T\+H\+E\+M\+ES}{WP\_USE\_THEMES}}
+{\footnotesize\ttfamily const W\+P\+\_\+\+U\+S\+E\+\_\+\+T\+H\+E\+M\+ES false}
+
+
+
+Permet l\textquotesingle{}utilisation d\textquotesingle{}un fichier externe à Word\+Press. 
+

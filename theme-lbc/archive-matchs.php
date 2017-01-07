@@ -1,3 +1,15 @@
+<?php
+/**
+ * \file      archive-matchs.php
+ * \author    Robin Minervini, Valentin Loll, Melody Soria, Anaëlle Guay
+ * \version   1.0
+ * \date       21 Décembre 2016
+ * \brief       Calendrier des matchs
+ *
+ * \details    Liens externe vers le calendrier complet et les résultats.
+ * Liste les matchs à venir, triable par catégorie d'équipe (ex: poussin).
+ */
+?>
 <?php get_header(); ?>
 <div id="container">
     <h2>Calendrier des matchs</h2>
@@ -28,35 +40,83 @@
             </a>
         </div>
 
+
         <h5>Trier par équipe</h5>
+        <?php echo esc_html($a_term->name); ?>
         <form id="form" name="Choix">
-            <select name="tri-categorie" id="select" onChange="mainInfo(this.value);">
+            <select name="tri-categorie" id="select-tri" onChange="mainInfo(this.value);">
                 <option value="container-single-match">Tous</option>
-                <option value="baby">Baby</option>
-                <option value="mini-poussins">Mini-poussins</option>
-                <option value="benjamines">Benjamines</option>
-                <option value="benjamins">Benjamins</option>
-                <option value="minimes-filles">Minimes-filles</option>
-                <option value="minimes-garcons">Minimes-garcon</option>
-                <option value="cadettes">Cadettes</option>
-                <option value="seniors">Seniors</option>
+                <?php
+                /**
+                 * \brief      Le nom de la taxonomie
+                 */
+                const TAXONOMY = "categorie-equipe";
+                /**
+                 * \brief      Le type associé à chercher
+                 */
+                const POST_TYPE = 'matchs';
+                /**
+                 * \brief      Retrouve la liste des terms (un tableau)
+                 */
+                $taxonomy_terms = get_terms(TAXONOMY);
+                /**
+                 * \brief      Boucle sur les terms
+                 */
+                foreach ($taxonomy_terms as $a_term):
+                    /**
+                     * \brief     Pour un terms, cherche les "post" du type défini
+                     */
+                    $matchs = new WP_Query(array(
+                        'post_type' => POST_TYPE,
+                        'taxonomy' => TAXONOMY,
+                        'term' => $a_term->slug,
+                        'nopaging' => true,
+                    )); ?>
+                    <option value="<?php echo esc_html($a_term->name); ?>"><?php echo esc_html(ucfirst($a_term->name)); ?></option>
+                    <?php
+                    /**
+                     * \brief     Termine la boucle de récupération des termes de la taxonomie categorie-equipe
+                     */
+                endforeach;?>
             </select>
         </form>
     </div>
 
     <div class="container-match">
-        <?php $last_date_match = ''; ?>
+        <?php
+        /**
+         * \brief      Date du dernier match de la boucle
+         * \details Initialise la date du dernier match, utilisé pour savoir si il est nécessaire de répété la date entre 2 matchs consécutif lors de l'affichage des matchs.
+         */
+        $last_date_match = ''; ?>
         <?php while (have_posts()): the_post(); ?>
 
-            <?php $date_match = date_i18n(' l d F ', strtotime(rwmb_meta("lbc_date"))); ?>
+            <?php
+            /**
+             * \brief      Date du match
+             * \details Date du match au format jj/mm/aaaa
+             */
+            $date_match = date_i18n(' l d F ', strtotime(rwmb_meta("lbc_date"))); ?>
 
-            <?php $terms = get_the_terms($post->ID, 'categorie-equipe');
+            <?php
+            /**
+             * \brief Récupère la taxonomie "catégorie-equipe"
+             * \details Récupère la taxonomie "categorie-equipe" et ressort la taxonomie (catégorie) du match.
+             */
+            $terms = get_the_terms($post->ID, 'categorie-equipe');
+            /**
+             * \brief Liste tout les terms d'une taxonomie
+             */
             foreach ($terms as $term) ?>
 
                 <div class="container-single-match <?php echo $term->slug ?>">
             <?php if ($last_date_match != $date_match): ?>
                 <h4 class="date-match"><?php echo $date_match ?></h4>
                 <?php $last_date_match = $date_match;
+
+                /**
+                 * \brief      Termine le test de la date du match courrant et de la date précédente
+                 */
             endif; ?>
 
             <a href="<?php echo get_permalink($post->ID) ?>" class="match">
@@ -81,9 +141,9 @@
                     <time datetime="<?php echo(rwmb_meta("lbc_heure")); ?>:00">
                         <?php echo(rwmb_meta("lbc_heure")) ?>
                     </time>
-                        <span class="categorie">
-                            <?php echo $term->name ?>
-                        </span>
+                    <span class="categorie">
+                        <?php echo $term->name ?>
+                    </span>
                 </div>
                 <div class="equipe">
                     <svg version="1.1" class="logo-equipe-2" xmlns="http://www.w3.org/2000/svg"
@@ -109,7 +169,7 @@
 
     <script>
         function mainInfo(id) {
-            var selectElmt = document.getElementById("select");
+            var selectElmt = document.getElementById("select-tri");
             var vs = selectElmt.options[selectElmt.selectedIndex].value;
 
             $.ajax({
@@ -121,33 +181,10 @@
                     $(".container-match").html(data);
                 },
                 error: function (jqXHR, status, error) {
-                    alert("error");
+                    alert("ajax error");
                 }
 
             });
-        }
-    </script>
-
-    <script>
-
-        function hasClass(elem, className) {
-            return new RegExp(' ' + className + ' ').test(' ' + elem.className + ' ');
-        }
-
-        function Tri() {
-
-            var selectElmt = document.getElementById("select");
-            var vs = selectElmt.options[selectElmt.selectedIndex].value;
-
-            var el = document.getElementsByClassName('container-single-match');
-            for (i = 0; i < el.length; i++) {
-                if (hasClass(el[i], vs)) {
-                    el[i].style.display = "block";
-                } else {
-                    el[i].style.display = "none";
-
-                }
-            }
         }
     </script>
 

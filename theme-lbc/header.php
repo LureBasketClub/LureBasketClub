@@ -1,3 +1,14 @@
+<?php
+/**
+ * \file      header.php
+ * \author    Robin Minervini, Valentin Loll, Melody Soria, Anaëlle Guay
+ * \version   1.0
+ * \date       20 Novembre 2016
+ * \brief       Entête
+ *
+ * \details    Défini les balises meta. Charge les données de wordpress. Affiche le logo et le menu.
+ */
+?>
 <!doctype html>
 <html lang="fr">
 <head>
@@ -69,13 +80,13 @@
           <nav id="menu">
               <ul>
                   <li><a href="<?php echo home_url() ?>">Accueil</a></li>
-                  <li><a href="<?php echo esc_url(get_post_type_archive_link("equipes")); ?>">Equipes</a></li>
-                  <li><a href="<?php echo esc_url(get_post_type_archive_link("actualites")); ?>">Actualités</a></li>
-                  <li><a href="<?php echo esc_url(get_post_type_archive_link("matchs")); ?>">Calendrier</a></li>
-                  <li><a href="<?php echo get_permalink(get_page_by_title("informations pratiques")); ?>">Informations pratiques</a></li>
-                  <li><a href="<?php echo get_permalink(get_page_by_title('formations'))?>">Formations</a></li>
-                  <li><a href="<?php echo esc_url(get_post_type_archive_link("galerie")); ?>">Galerie</a></li>
-                  <li><a href="<?php echo esc_url(get_post_type_archive_link("boutique")); ?>">Boutique</a></li>
+                  <li><a href="<?php echo esc_url(get_post_type_archive_link("equipes")); ?>" class="lien-menu-equipes">Equipes</a></li>
+                  <li><a href="<?php echo esc_url(get_post_type_archive_link("actualites")); ?>" class="lien-menu-actualites">Actualités</a></li>
+                  <li><a href="<?php echo esc_url(get_post_type_archive_link("matchs")); ?>" class="lien-menu-calendrier">Calendrier</a></li>
+                  <li><a href="<?php echo get_permalink(get_page_by_title("informations pratiques")); ?>" class="lien-menu-infos">Informations pratiques</a></li>
+                  <li><a href="<?php echo get_permalink(get_page_by_title('formations'))?>" class="lien-menu-formations">Formations</a></li>
+                  <li><a href="<?php echo esc_url(get_post_type_archive_link("galerie")); ?>" class="lien-menu-galerie">Galerie</a></li>
+                  <li><a href="<?php echo esc_url(get_post_type_archive_link("boutique")); ?>" class="lien-menu-boutique">Boutique</a></li>
               </ul>
           </nav>
       </div>

@@ -1,14 +1,31 @@
+<?php
+/**
+ * \file      archive-galerie.php
+ * \author    Robin Minervini, Valentin Loll, Melody Soria, Anaëlle Guay
+ * \version   1.0
+ * \date       30 Novembre 2016
+ * \brief       Liste des différentes saisons pour l'organisation des photos.
+ *
+ * \details    Chaque saison est spécifiée par une date (Ex: 2016/2017) et une image.
+ */
+?>
 <?php get_header() ?>
 
 <div id="container">
     <h2>Saisons</h2>
     <div id="grid">
         <?php
-        // Le nom de la taxonomie
-        const TAXONOMY = "saisons";
-        // Le type associé à chercher
+        /**
+         * \brief  Le nom de la taxonomie
+         */
+        const TAXONOMY = 'saisons';
+        /**
+         * \brief  Le type associé à chercher
+         */
         const POST_TYPE = 'evenement';
-        // retrouve la liste des terms (un tableau)
+        /**
+         * \brief      Retrouve la liste des terms (un tableau)
+         */
         $taxonomy_terms = get_terms(TAXONOMY);
         // boucle sur les terms
         foreach ($taxonomy_terms as $a_term):
@@ -32,3 +49,13 @@
 </div>
 
 <?php get_footer() ?>
+
+<option value="container-single-match">Tous</option>
+<option value="baby">Baby</option>
+<option value="mini-poussins">Mini-poussins</option>
+<option value="benjamines">Benjamines</option>
+<option value="benjamins">Benjamins</option>
+<option value="minimes-filles">Minimes-filles</option>
+<option value="minimes-garcons">Minimes-garcon</option>
+<option value="cadettes">Cadettes</option>
+<option value="seniors">Seniors</option>

@@ -1,15 +1,35 @@
+<?php
+/**
+ * \file     single-evenement.php
+ * \author    Robin Minervini, Valentin Loll, Melody Soria, Anaëlle Guay
+ * \version   1.0
+ * \date       30 Novembre 2016
+ * \brief      Liste les photos d'un événement.
+ *
+ */
+?>
 <?php get_header() ?>
 
 <div id="container">
     <h2><?php the_title(); ?></h2>
     <div id="grid">
-        <?php $listImagesID = rwmb_meta("lbc_photo_evenement", array('multiple' => true));
+        <?php
+        /**
+         * \brief      Tableau d'image
+         * \details Contient toutes les photos d'un événement.
+         */
+        $listImagesID = rwmb_meta("lbc_photo_evenement", array('multiple' => true));
         foreach($listImagesID as $imageID => $imageObj):
         ?>
             <div class="actu">
                 <?php echo wp_get_attachment_image($imageID); ?>
             </div>
-            <?php endforeach; ?>
+            <?php
+            /**
+             * \brief      Date du dernier match de la boucle
+             * \details Initialise la date du dernier match, utilisé pour savoir si il est nécessaire de répété la date entre 2 matchs consécutif lors de l'affichage des matchs.
+             */
+        endforeach; ?>
     </div>
     <a href="<?php echo esc_url(get_post_type_archive_link("galerie")); ?>" id="retour-galerie">Revenir à la galerie
         <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"

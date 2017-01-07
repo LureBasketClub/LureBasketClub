@@ -1,10 +1,27 @@
+<?php
+/**
+ * \file     single-matchs.php
+ * \author    Robin Minervini, Valentin Loll, Melody Soria, Anaëlle Guay
+ * \version   1.0
+ * \date       2 Novembre 2016
+ * \brief      Affiche les informations d'un match
+ *
+ * \details Affiche les 2 équipes, l'horaire, la catégorie, le lieu ainsi que les officiels si le match est à domicile.
+ */
+?>
+
 <?php get_header(); ?>
 
 <div id="container">
     <h2>Match</h2>
 
     <div class="container-match">
-        <?php $date_match = date_i18n(' l d F ', strtotime(rwmb_meta("lbc_date"))); ?>
+        <?php
+        /**
+         * \brief      Date du match
+         * \details Date du match au format jj/mm/aaaa
+         */
+        $date_match = date_i18n(' l d F ', strtotime(rwmb_meta("lbc_date"))); ?>
         <h4 class="date-match"><?php echo $date_match; ?></h4>
         <div class="match">
             <div class="equipe">
@@ -21,7 +38,15 @@
                 <span class="nom-equipe"><?php echo(rwmb_meta("lbc_equipe_1")); ?></span>
             </div>
 
-            <?php $terms = get_the_terms($post->ID, 'categorie-equipe');
+            <?php
+            /**
+             * \brief Récupère la taxonomie "catégorie-equipe"
+             * \details Récupère la taxonomie "categorie-equipe" et ressort la taxonomie (catégorie) du match.
+             */
+            $terms = get_the_terms($post->ID, 'categorie-equipe');
+            /**
+             * \brief Liste tout les terms d'une taxonomie
+             */
             foreach ($terms as $term) ?>
 
             <div class="horaire">
@@ -51,10 +76,6 @@
         <p>Jour : <?php echo $date_match ?></p>
         <p>Horaire : <time datetime=" <?php echo(rwmb_meta("lbc_heure")) ?>:00"><?php echo(rwmb_meta("lbc_heure")) ?></time>.</p>
         <p>Lieu : <?php echo(rwmb_meta("lbc_salle")); ?> à <?php echo(rwmb_meta("lbc_ville")); ?>.</p>
-
-        <?php $ext = (rwmb_meta("lbc_match_ext"));
-
-        ?>
 
         <?php if ((rwmb_meta("lbc_equipe_2")) == 'Lure'): ?>
             <div id="officiels">

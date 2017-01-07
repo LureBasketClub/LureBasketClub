@@ -1,0 +1,123 @@
+\hypertarget{index_8php}{}\section{C\+:/\+Users/\+Robin/\+Documents/\+Works/\+P\+R\+O\+J\+ET L\+U\+RE B\+A\+S\+K\+ET C\+L\+U\+B/\+Site/\+Lure\+Basket\+Club/theme-\/lbc/index.php File Reference}
+\label{index_8php}\index{C\+:/\+Users/\+Robin/\+Documents/\+Works/\+P\+R\+O\+J\+E\+T L\+U\+R\+E B\+A\+S\+K\+E\+T C\+L\+U\+B/\+Site/\+Lure\+Basket\+Club/theme-\/lbc/index.\+php@{C\+:/\+Users/\+Robin/\+Documents/\+Works/\+P\+R\+O\+J\+E\+T L\+U\+R\+E B\+A\+S\+K\+E\+T C\+L\+U\+B/\+Site/\+Lure\+Basket\+Club/theme-\/lbc/index.\+php}}
+
+
+Page d\textquotesingle{}accueil.  
+
+
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{index_8php_a1b05dae45f9e3f4c1fe86048550d2c5b}{endwhile}
+\begin{DoxyCompactList}\small\item\em Termine la boucle de récupération des actualités. \end{DoxyCompactList}\item 
+\hyperlink{index_8php_ae59c5fee360f6a47ff7e4847a26a6509}{\$last\+\_\+date\+\_\+match} = \textquotesingle{}\textquotesingle{}
+\begin{DoxyCompactList}\small\item\em Date du dernier match de la boucle. \end{DoxyCompactList}\item 
+\hyperlink{index_8php_a9dccec06b3547f7c82bc8ade68a042a5}{\$date\+\_\+match} = date\+\_\+i18n(\textquotesingle{} l d F \textquotesingle{}, strtotime(rwmb\+\_\+meta(\char`\"{}lbc\+\_\+date\char`\"{})))
+\begin{DoxyCompactList}\small\item\em Date du match. \end{DoxyCompactList}\item 
+\hyperlink{index_8php_a957f8b9f1c1240556780615c84d85db3}{\$matchs} = new W\+P\+\_\+\+Query(\textquotesingle{}post\+\_\+type=matchs\&posts\+\_\+per\+\_\+page=5\textquotesingle{})
+\begin{DoxyCompactList}\small\item\em Requête personnalisée pour afficher les 5 prochains matchs à venir. \end{DoxyCompactList}\item 
+\hyperlink{index_8php_a78db1a0602e3b6ac1d9a1b5ec103c160}{\$time} = current\+\_\+time(\textquotesingle{}Y-\/m-\/d\textquotesingle{})
+\begin{DoxyCompactList}\small\item\em Récupère l\textquotesingle{}heure du server. \end{DoxyCompactList}\item 
+\hyperlink{index_8php_ad6d756efb764174cfe7a6e9abc97e3eb}{\$terms} = get\+\_\+the\+\_\+terms(\$post-\/$>$ID, \textquotesingle{}categorie-\/equipe\textquotesingle{})
+\begin{DoxyCompactList}\small\item\em Récupère la taxonomie \char`\"{}catégorie-\/equipe\char`\"{}. \end{DoxyCompactList}\item 
+if(\$last\+\_\+date\+\_\+match !=\$date\+\_\+match) \hyperlink{index_8php_a9460f28f15b2fd79c1ac50369c6a48a9}{endif}
+\begin{DoxyCompactList}\small\item\em Test la date courrante et la date précédente testée. \end{DoxyCompactList}\item 
+\$compteur\+\_\+actu \hyperlink{index_8php_af8963912a2b9f7b2266cbd752f2d0be0}{\$actu} = new W\+P\+\_\+\+Query(\textquotesingle{}post\+\_\+type=actualites\&posts\+\_\+per\+\_\+page=3\textquotesingle{})
+\begin{DoxyCompactList}\small\item\em Fait une requête sur les actu, limitée à 3 résultats. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Page d\textquotesingle{}accueil. 
+
+\begin{DoxyAuthor}{Author}
+Robin Minervini, Valentin Loll, Melody Soria, Anaëlle Guay 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+7 Décembre 2016
+\end{DoxyDate}
+Page d\textquotesingle{}accueil qui affiche les 5 prochains matchs et les 3 actualités à venir 
+
+\subsection{Variable Documentation}
+\hypertarget{index_8php_af8963912a2b9f7b2266cbd752f2d0be0}{}\label{index_8php_af8963912a2b9f7b2266cbd752f2d0be0} 
+\index{index.\+php@{index.\+php}!\$actu@{\$actu}}
+\index{\$actu@{\$actu}!index.\+php@{index.\+php}}
+\subsubsection{\texorpdfstring{\$actu}{$actu}}
+{\footnotesize\ttfamily \$compteur\+\_\+actu \$actu = new W\+P\+\_\+\+Query(\textquotesingle{}post\+\_\+type=actualites\&posts\+\_\+per\+\_\+page=3\textquotesingle{})}
+
+
+
+Fait une requête sur les actu, limitée à 3 résultats. 
+
+\hypertarget{index_8php_a9dccec06b3547f7c82bc8ade68a042a5}{}\label{index_8php_a9dccec06b3547f7c82bc8ade68a042a5} 
+\index{index.\+php@{index.\+php}!\$date\+\_\+match@{\$date\+\_\+match}}
+\index{\$date\+\_\+match@{\$date\+\_\+match}!index.\+php@{index.\+php}}
+\subsubsection{\texorpdfstring{\$date\+\_\+match}{$date\_match}}
+{\footnotesize\ttfamily \$date\+\_\+match = date\+\_\+i18n(\textquotesingle{} l d F \textquotesingle{}, strtotime(rwmb\+\_\+meta(\char`\"{}lbc\+\_\+date\char`\"{})))}
+
+
+
+Date du match. 
+
+Date du match au format jj/mm/aaaa \hypertarget{index_8php_ae59c5fee360f6a47ff7e4847a26a6509}{}\label{index_8php_ae59c5fee360f6a47ff7e4847a26a6509} 
+\index{index.\+php@{index.\+php}!\$last\+\_\+date\+\_\+match@{\$last\+\_\+date\+\_\+match}}
+\index{\$last\+\_\+date\+\_\+match@{\$last\+\_\+date\+\_\+match}!index.\+php@{index.\+php}}
+\subsubsection{\texorpdfstring{\$last\+\_\+date\+\_\+match}{$last\_date\_match}}
+{\footnotesize\ttfamily \$last\+\_\+date\+\_\+match = \textquotesingle{}\textquotesingle{}}
+
+
+
+Date du dernier match de la boucle. 
+
+Initialise la date du dernier match, utilisé pour savoir si il est nécessaire de répété la date entre 2 matchs consécutif lors de l\textquotesingle{}affichage des matchs. \hypertarget{index_8php_a957f8b9f1c1240556780615c84d85db3}{}\label{index_8php_a957f8b9f1c1240556780615c84d85db3} 
+\index{index.\+php@{index.\+php}!\$matchs@{\$matchs}}
+\index{\$matchs@{\$matchs}!index.\+php@{index.\+php}}
+\subsubsection{\texorpdfstring{\$matchs}{$matchs}}
+{\footnotesize\ttfamily \$matchs = new W\+P\+\_\+\+Query(\textquotesingle{}post\+\_\+type=matchs\&posts\+\_\+per\+\_\+page=5\textquotesingle{})}
+
+
+
+Requête personnalisée pour afficher les 5 prochains matchs à venir. 
+
+Modifie la requête Word\+Press pour récupérer les 5 prochains matchs. \hypertarget{index_8php_ad6d756efb764174cfe7a6e9abc97e3eb}{}\label{index_8php_ad6d756efb764174cfe7a6e9abc97e3eb} 
+\index{index.\+php@{index.\+php}!\$terms@{\$terms}}
+\index{\$terms@{\$terms}!index.\+php@{index.\+php}}
+\subsubsection{\texorpdfstring{\$terms}{$terms}}
+{\footnotesize\ttfamily \$terms = get\+\_\+the\+\_\+terms(\$post-\/$>$ID, \textquotesingle{}categorie-\/equipe\textquotesingle{})}
+
+
+
+Récupère la taxonomie \char`\"{}catégorie-\/equipe\char`\"{}. 
+
+Récupère la taxonomie \char`\"{}categorie-\/equipe\char`\"{} et ressort la taxonomie (catégorie) du match. \hypertarget{index_8php_a78db1a0602e3b6ac1d9a1b5ec103c160}{}\label{index_8php_a78db1a0602e3b6ac1d9a1b5ec103c160} 
+\index{index.\+php@{index.\+php}!\$time@{\$time}}
+\index{\$time@{\$time}!index.\+php@{index.\+php}}
+\subsubsection{\texorpdfstring{\$time}{$time}}
+{\footnotesize\ttfamily \$time = current\+\_\+time(\textquotesingle{}Y-\/m-\/d\textquotesingle{})}
+
+
+
+Récupère l\textquotesingle{}heure du server. 
+
+Récupère l\textquotesingle{}heure du serveur et le stoch au format aaaa-\/mm-\/jj \hypertarget{index_8php_a9460f28f15b2fd79c1ac50369c6a48a9}{}\label{index_8php_a9460f28f15b2fd79c1ac50369c6a48a9} 
+\index{index.\+php@{index.\+php}!endif@{endif}}
+\index{endif@{endif}!index.\+php@{index.\+php}}
+\subsubsection{\texorpdfstring{endif}{endif}}
+{\footnotesize\ttfamily if ( \$last\+\_\+date\+\_\+match !=\$date\+\_\+match) endif}
+
+
+
+Test la date courrante et la date précédente testée. 
+
+Test la date du match courrant et la date précédente. Si les 2 sont égales, la date n\textquotesingle{}est pas réaffichée. \hypertarget{index_8php_a1b05dae45f9e3f4c1fe86048550d2c5b}{}\label{index_8php_a1b05dae45f9e3f4c1fe86048550d2c5b} 
+\index{index.\+php@{index.\+php}!endwhile@{endwhile}}
+\index{endwhile@{endwhile}!index.\+php@{index.\+php}}
+\subsubsection{\texorpdfstring{endwhile}{endwhile}}
+{\footnotesize\ttfamily endwhile}
+
+
+
+Termine la boucle de récupération des actualités. 
+

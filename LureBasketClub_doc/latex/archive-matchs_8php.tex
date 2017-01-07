@@ -1,0 +1,132 @@
+\hypertarget{archive-matchs_8php}{}\section{C\+:/\+Users/\+Robin/\+Documents/\+Works/\+P\+R\+O\+J\+ET L\+U\+RE B\+A\+S\+K\+ET C\+L\+U\+B/\+Site/\+Lure\+Basket\+Club/theme-\/lbc/archive-\/matchs.php File Reference}
+\label{archive-matchs_8php}\index{C\+:/\+Users/\+Robin/\+Documents/\+Works/\+P\+R\+O\+J\+E\+T L\+U\+R\+E B\+A\+S\+K\+E\+T C\+L\+U\+B/\+Site/\+Lure\+Basket\+Club/theme-\/lbc/archive-\/matchs.\+php@{C\+:/\+Users/\+Robin/\+Documents/\+Works/\+P\+R\+O\+J\+E\+T L\+U\+R\+E B\+A\+S\+K\+E\+T C\+L\+U\+B/\+Site/\+Lure\+Basket\+Club/theme-\/lbc/archive-\/matchs.\+php}}
+
+
+Calendrier des matchs.  
+
+
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{archive-matchs_8php_a1dc6041def2926dbb45188d4f766d4b3}{T\+A\+X\+O\+N\+O\+MY} = \char`\"{}categorie-\/equipe\char`\"{}
+\begin{DoxyCompactList}\small\item\em Le nom de la taxonomie. \end{DoxyCompactList}\item 
+const \hyperlink{archive-matchs_8php_aef7d3346406e86714e365321541f4d97}{P\+O\+S\+T\+\_\+\+T\+Y\+PE} = \textquotesingle{}matchs\textquotesingle{}
+\begin{DoxyCompactList}\small\item\em Le type associé à chercher. \end{DoxyCompactList}\item 
+\hyperlink{archive-matchs_8php_a1bb9ed78e368f91696e146ce36663486}{\$taxonomy\+\_\+terms} = get\+\_\+terms(\hyperlink{archive-matchs_8php_a1dc6041def2926dbb45188d4f766d4b3}{T\+A\+X\+O\+N\+O\+MY})
+\begin{DoxyCompactList}\small\item\em Retrouve la liste des terms (un tableau) \end{DoxyCompactList}\item 
+\hyperlink{archive-matchs_8php_a672d9707ef91db026c210f98cc601123}{endforeach}
+\item 
+\hyperlink{archive-matchs_8php_ae59c5fee360f6a47ff7e4847a26a6509}{\$last\+\_\+date\+\_\+match} = \textquotesingle{}\textquotesingle{}
+\begin{DoxyCompactList}\small\item\em Date du dernier match de la boucle. \end{DoxyCompactList}\item 
+\hyperlink{archive-matchs_8php_a9dccec06b3547f7c82bc8ade68a042a5}{\$date\+\_\+match} = date\+\_\+i18n(\textquotesingle{} l d F \textquotesingle{}, strtotime(rwmb\+\_\+meta(\char`\"{}lbc\+\_\+date\char`\"{})))
+\begin{DoxyCompactList}\small\item\em Date du match. \end{DoxyCompactList}\item 
+\hyperlink{archive-matchs_8php_ad6d756efb764174cfe7a6e9abc97e3eb}{\$terms} = get\+\_\+the\+\_\+terms(\$post-\/$>$ID, \textquotesingle{}categorie-\/equipe\textquotesingle{})
+\begin{DoxyCompactList}\small\item\em Récupère la taxonomie \char`\"{}catégorie-\/equipe\char`\"{}. \end{DoxyCompactList}\item 
+\hyperlink{archive-matchs_8php_acef14cb9dd3a31dcc9b59c773f76807e}{foreach} (\$terms as \$term) ?$>$$<$ div class
+\begin{DoxyCompactList}\small\item\em Liste tout les terms d\textquotesingle{}une taxonomie. \end{DoxyCompactList}\item 
+\hyperlink{archive-matchs_8php_a82cd33ca97ff99f2fcc5e9c81d65251b}{endif}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Calendrier des matchs. 
+
+\begin{DoxyAuthor}{Author}
+Robin Minervini, Valentin Loll, Melody Soria, Anaëlle Guay 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+21 Décembre 2016
+\end{DoxyDate}
+Liens externe vers le calendrier complet et les résultats. Liste les matchs à venir, triable par catégorie d\textquotesingle{}équipe (ex\+: poussin). 
+
+\subsection{Variable Documentation}
+\hypertarget{archive-matchs_8php_a9dccec06b3547f7c82bc8ade68a042a5}{}\label{archive-matchs_8php_a9dccec06b3547f7c82bc8ade68a042a5} 
+\index{archive-\/matchs.\+php@{archive-\/matchs.\+php}!\$date\+\_\+match@{\$date\+\_\+match}}
+\index{\$date\+\_\+match@{\$date\+\_\+match}!archive-\/matchs.\+php@{archive-\/matchs.\+php}}
+\subsubsection{\texorpdfstring{\$date\+\_\+match}{$date\_match}}
+{\footnotesize\ttfamily \$date\+\_\+match = date\+\_\+i18n(\textquotesingle{} l d F \textquotesingle{}, strtotime(rwmb\+\_\+meta(\char`\"{}lbc\+\_\+date\char`\"{})))}
+
+
+
+Date du match. 
+
+Date du match au format jj/mm/aaaa \hypertarget{archive-matchs_8php_ae59c5fee360f6a47ff7e4847a26a6509}{}\label{archive-matchs_8php_ae59c5fee360f6a47ff7e4847a26a6509} 
+\index{archive-\/matchs.\+php@{archive-\/matchs.\+php}!\$last\+\_\+date\+\_\+match@{\$last\+\_\+date\+\_\+match}}
+\index{\$last\+\_\+date\+\_\+match@{\$last\+\_\+date\+\_\+match}!archive-\/matchs.\+php@{archive-\/matchs.\+php}}
+\subsubsection{\texorpdfstring{\$last\+\_\+date\+\_\+match}{$last\_date\_match}}
+{\footnotesize\ttfamily \$last\+\_\+date\+\_\+match = \textquotesingle{}\textquotesingle{}}
+
+
+
+Date du dernier match de la boucle. 
+
+Initialise la date du dernier match, utilisé pour savoir si il est nécessaire de répété la date entre 2 matchs consécutif lors de l\textquotesingle{}affichage des matchs. \hypertarget{archive-matchs_8php_a1bb9ed78e368f91696e146ce36663486}{}\label{archive-matchs_8php_a1bb9ed78e368f91696e146ce36663486} 
+\index{archive-\/matchs.\+php@{archive-\/matchs.\+php}!\$taxonomy\+\_\+terms@{\$taxonomy\+\_\+terms}}
+\index{\$taxonomy\+\_\+terms@{\$taxonomy\+\_\+terms}!archive-\/matchs.\+php@{archive-\/matchs.\+php}}
+\subsubsection{\texorpdfstring{\$taxonomy\+\_\+terms}{$taxonomy\_terms}}
+{\footnotesize\ttfamily \$taxonomy\+\_\+terms = get\+\_\+terms(\hyperlink{archive-matchs_8php_a1dc6041def2926dbb45188d4f766d4b3}{T\+A\+X\+O\+N\+O\+MY})}
+
+
+
+Retrouve la liste des terms (un tableau) 
+
+\hypertarget{archive-matchs_8php_ad6d756efb764174cfe7a6e9abc97e3eb}{}\label{archive-matchs_8php_ad6d756efb764174cfe7a6e9abc97e3eb} 
+\index{archive-\/matchs.\+php@{archive-\/matchs.\+php}!\$terms@{\$terms}}
+\index{\$terms@{\$terms}!archive-\/matchs.\+php@{archive-\/matchs.\+php}}
+\subsubsection{\texorpdfstring{\$terms}{$terms}}
+{\footnotesize\ttfamily \$terms = get\+\_\+the\+\_\+terms(\$post-\/$>$ID, \textquotesingle{}categorie-\/equipe\textquotesingle{})}
+
+
+
+Récupère la taxonomie \char`\"{}catégorie-\/equipe\char`\"{}. 
+
+Récupère la taxonomie \char`\"{}categorie-\/equipe\char`\"{} et ressort la taxonomie (catégorie) du match. \hypertarget{archive-matchs_8php_a672d9707ef91db026c210f98cc601123}{}\label{archive-matchs_8php_a672d9707ef91db026c210f98cc601123} 
+\index{archive-\/matchs.\+php@{archive-\/matchs.\+php}!endforeach@{endforeach}}
+\index{endforeach@{endforeach}!archive-\/matchs.\+php@{archive-\/matchs.\+php}}
+\subsubsection{\texorpdfstring{endforeach}{endforeach}}
+{\footnotesize\ttfamily endforeach}
+
+\hypertarget{archive-matchs_8php_a82cd33ca97ff99f2fcc5e9c81d65251b}{}\label{archive-matchs_8php_a82cd33ca97ff99f2fcc5e9c81d65251b} 
+\index{archive-\/matchs.\+php@{archive-\/matchs.\+php}!endif@{endif}}
+\index{endif@{endif}!archive-\/matchs.\+php@{archive-\/matchs.\+php}}
+\subsubsection{\texorpdfstring{endif}{endif}}
+{\footnotesize\ttfamily endif}
+
+\hypertarget{archive-matchs_8php_acef14cb9dd3a31dcc9b59c773f76807e}{}\label{archive-matchs_8php_acef14cb9dd3a31dcc9b59c773f76807e} 
+\index{archive-\/matchs.\+php@{archive-\/matchs.\+php}!foreach@{foreach}}
+\index{foreach@{foreach}!archive-\/matchs.\+php@{archive-\/matchs.\+php}}
+\subsubsection{\texorpdfstring{foreach}{foreach}}
+{\footnotesize\ttfamily foreach( \$terms as \$term) ?$>$$<$ div class}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+=\textcolor{stringliteral}{"container-single-match <?php echo $term->slug ?>"}>
+            <?php \textcolor{keywordflow}{if} (\hyperlink{archive-matchs_8php_ae59c5fee360f6a47ff7e4847a26a6509}{$last\_date\_match} != \hyperlink{archive-matchs_8php_a9dccec06b3547f7c82bc8ade68a042a5}{$date\_match}):
+\end{DoxyCode}
+
+
+Liste tout les terms d\textquotesingle{}une taxonomie. 
+
+\hypertarget{archive-matchs_8php_aef7d3346406e86714e365321541f4d97}{}\label{archive-matchs_8php_aef7d3346406e86714e365321541f4d97} 
+\index{archive-\/matchs.\+php@{archive-\/matchs.\+php}!P\+O\+S\+T\+\_\+\+T\+Y\+PE@{P\+O\+S\+T\+\_\+\+T\+Y\+PE}}
+\index{P\+O\+S\+T\+\_\+\+T\+Y\+PE@{P\+O\+S\+T\+\_\+\+T\+Y\+PE}!archive-\/matchs.\+php@{archive-\/matchs.\+php}}
+\subsubsection{\texorpdfstring{P\+O\+S\+T\+\_\+\+T\+Y\+PE}{POST\_TYPE}}
+{\footnotesize\ttfamily const P\+O\+S\+T\+\_\+\+T\+Y\+PE = \textquotesingle{}matchs\textquotesingle{}}
+
+
+
+Le type associé à chercher. 
+
+\hypertarget{archive-matchs_8php_a1dc6041def2926dbb45188d4f766d4b3}{}\label{archive-matchs_8php_a1dc6041def2926dbb45188d4f766d4b3} 
+\index{archive-\/matchs.\+php@{archive-\/matchs.\+php}!T\+A\+X\+O\+N\+O\+MY@{T\+A\+X\+O\+N\+O\+MY}}
+\index{T\+A\+X\+O\+N\+O\+MY@{T\+A\+X\+O\+N\+O\+MY}!archive-\/matchs.\+php@{archive-\/matchs.\+php}}
+\subsubsection{\texorpdfstring{T\+A\+X\+O\+N\+O\+MY}{TAXONOMY}}
+{\footnotesize\ttfamily const T\+A\+X\+O\+N\+O\+MY = \char`\"{}categorie-\/equipe\char`\"{}}
+
+
+
+Le nom de la taxonomie. 
+

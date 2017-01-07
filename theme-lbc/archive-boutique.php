@@ -1,3 +1,14 @@
+<?php
+/**
+ * \file      archive-boutique.php
+ * \author    Robin Minervini, Valentin Loll, Melody Soria, Anaëlle Guay
+ * \version   1.0
+ * \date       13 Décembre 2016
+ * \brief       Boutique
+ *
+ * \details    Vitrine de la boutique du club. Ne gère pas le paiement.
+ */
+?>
 <?php get_header(); ?>
 
 <div id="container">

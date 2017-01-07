@@ -1,3 +1,15 @@
+<?php
+/**
+ * \file      archive-equipes.php
+ * \author    Robin Minervini, Valentin Loll, Melody Soria, Anaëlle Guay
+ * \version   1.0
+ * \date       2 Novembre 2016
+ * \brief       Liste des équipes du club
+ *
+ * \details    Liste de toutes les équipes du club. Pour chaque équipe, le nom de l'entraineur est spécifié ainsi que
+ * son numéro de téléphone. Il est également renseigné les sponsors et la couleur des maillots.
+ */
+?>
 <?php get_header(); ?>
 
 <div id="container">

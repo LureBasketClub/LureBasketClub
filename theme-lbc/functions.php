@@ -1,6 +1,21 @@
 <?php
+/**
+ * \file      function.php
+ * \author    Robin Minervini, Valentin Loll, Melody Soria, Anaëlle Guay
+ * \version   1.0
+ * \date       15 Décembre 2016
+ * \brief      Paramètres du site
+ *
+ * \details    Charge les feuilles des styles, les posts types, les taxonomies, les champs personnalisés et les requetes WordPress personalisées.
+ */
+?>
+
+<?php
 // Supprime la barre d’outils (code HTML généré par WordPress plus concis)
 add_action('after_setup_theme', 'plus_admin_bar');
+/**
+ * \brief Désactive la bar d'administration de la partie front.
+ */
 function plus_admin_bar()
 {
     show_admin_bar(false);
@@ -23,18 +38,21 @@ register_nav_menus(array(
 ));
 
 add_action('wp_enqueue_scripts', 'lure_basket_club_style');
+/**
+ * \brief Ajout des feuilles de styles
+ */
 function lure_basket_club_style()
 {
-    wp_enqueue_style('normalize', get_stylesheet_directory_uri() . '/css/normalize.css');
-    wp_enqueue_style('header', get_stylesheet_directory_uri() . '/css/header.css');
+    wp_enqueue_style('normalize', get_stylesheet_directory_uri() . '/css/normalize.min.css');
+    wp_enqueue_style('header', get_stylesheet_directory_uri() . '/css/header.min.css');
     wp_enqueue_style('footer', get_stylesheet_directory_uri() . '/css/footer.css');
-    wp_enqueue_style('style', get_stylesheet_directory_uri() . '/css/style.css');
-    wp_enqueue_style('calendrier', get_stylesheet_directory_uri() . '/css/calendrier.css');
-    wp_enqueue_style('matchs', get_stylesheet_directory_uri() . '/css/match.css');
-    wp_enqueue_style('grid-2', get_stylesheet_directory_uri() . '/css/grid-2.css');
-    wp_enqueue_style('equipes', get_stylesheet_directory_uri() . '/css/equipes.css');
-    wp_enqueue_style('contenu', get_stylesheet_directory_uri() . '/css/contenu.css');
-    wp_enqueue_style('formations', get_stylesheet_directory_uri() . '/css/formations.css');
+    wp_enqueue_style('style', get_stylesheet_directory_uri() . '/css/style.min.css');
+    wp_enqueue_style('calendrier', get_stylesheet_directory_uri() . '/css/calendrier.min.css');
+    wp_enqueue_style('matchs', get_stylesheet_directory_uri() . '/css/match.min.css');
+    wp_enqueue_style('grid-2', get_stylesheet_directory_uri() . '/css/grid-2.min.css');
+    wp_enqueue_style('equipes', get_stylesheet_directory_uri() . '/css/equipes.min.css');
+    wp_enqueue_style('contenu', get_stylesheet_directory_uri() . '/css/contenu.min.css');
+    wp_enqueue_style('formations', get_stylesheet_directory_uri() . '/css/formations.min.css');
     wp_enqueue_style('boutique', get_stylesheet_directory_uri() . '/css/boutique.css');
 
     wp_enqueue_script('menu', get_stylesheet_directory_uri() . '/js/menu.js');
@@ -46,6 +64,9 @@ function lure_basket_club_style()
 add_theme_support('post-thumbnails');
 
 add_action('init', 'create_post_type');
+/**
+ * \brief Création des post type pour ajouter du contenu personnalisé
+ */
 function create_post_type()
 {
     register_post_type('actualites',
@@ -142,6 +163,9 @@ function create_post_type()
 }
 
 add_action('init', 'ajout_taxonomy');
+/**
+ * \brief Ajout de taxonomies
+ */
 function ajout_taxonomy()
 {
     // répétez pour chaque taxonomie : lui donner un nom ici 'competences'
@@ -169,6 +193,10 @@ function ajout_taxonomy()
 }
 
 add_filter('rwmb_meta_boxes', 'ajout_meta_boxes');
+/**
+ * \brief Ajout des champs personnalisés
+ * \details Ajout des champs personnalisés avec MetaBox
+ */
 function ajout_meta_boxes($meta_boxes)
 {
     // Date (yyyy/mm/dd)
@@ -527,6 +555,11 @@ function ajout_meta_boxes($meta_boxes)
 
 
 add_filter('pre_get_posts', 'modifie_requete_wp');
+/**
+ * \brief Modification des requetes WordPress
+ * \details Modification de la requête WordPress pour ne plus afficher les matchs quand leur date est inférieur
+ * à la date du server.
+ */
 function modifie_requete_wp($query)
 {
     // Est appelé pour chaque page. Testez si c'est la requête que vous voulez changer.

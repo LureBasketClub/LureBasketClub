@@ -1,0 +1,69 @@
+\hypertarget{single-matchs_8php}{}\section{C\+:/\+Users/\+Robin/\+Documents/\+Works/\+P\+R\+O\+J\+ET L\+U\+RE B\+A\+S\+K\+ET C\+L\+U\+B/\+Site/\+Lure\+Basket\+Club/theme-\/lbc/single-\/matchs.php File Reference}
+\label{single-matchs_8php}\index{C\+:/\+Users/\+Robin/\+Documents/\+Works/\+P\+R\+O\+J\+E\+T L\+U\+R\+E B\+A\+S\+K\+E\+T C\+L\+U\+B/\+Site/\+Lure\+Basket\+Club/theme-\/lbc/single-\/matchs.\+php@{C\+:/\+Users/\+Robin/\+Documents/\+Works/\+P\+R\+O\+J\+E\+T L\+U\+R\+E B\+A\+S\+K\+E\+T C\+L\+U\+B/\+Site/\+Lure\+Basket\+Club/theme-\/lbc/single-\/matchs.\+php}}
+
+
+Affiche les informations d\textquotesingle{}un match.  
+
+
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{single-matchs_8php_a9dccec06b3547f7c82bc8ade68a042a5}{\$date\+\_\+match} = date\+\_\+i18n(\textquotesingle{} l d F \textquotesingle{}, strtotime(rwmb\+\_\+meta(\char`\"{}lbc\+\_\+date\char`\"{})))
+\begin{DoxyCompactList}\small\item\em Date du match. \end{DoxyCompactList}\item 
+\hyperlink{single-matchs_8php_ad6d756efb764174cfe7a6e9abc97e3eb}{\$terms} = get\+\_\+the\+\_\+terms(\$post-\/$>$ID, \textquotesingle{}categorie-\/equipe\textquotesingle{})
+\begin{DoxyCompactList}\small\item\em Récupère la taxonomie \char`\"{}catégorie-\/equipe\char`\"{}. \end{DoxyCompactList}\item 
+\hyperlink{single-matchs_8php_acef14cb9dd3a31dcc9b59c773f76807e}{foreach} (\$terms as \$term) ?$>$$<$ div class
+\begin{DoxyCompactList}\small\item\em Liste tout les terms d\textquotesingle{}une taxonomie. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Affiche les informations d\textquotesingle{}un match. 
+
+\begin{DoxyAuthor}{Author}
+Robin Minervini, Valentin Loll, Melody Soria, Anaëlle Guay 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2 Novembre 2016
+\end{DoxyDate}
+Affiche les 2 équipes, l\textquotesingle{}horaire, la catégorie, le lieu ainsi que les officiels si le match est à domicile. 
+
+\subsection{Variable Documentation}
+\hypertarget{single-matchs_8php_a9dccec06b3547f7c82bc8ade68a042a5}{}\label{single-matchs_8php_a9dccec06b3547f7c82bc8ade68a042a5} 
+\index{single-\/matchs.\+php@{single-\/matchs.\+php}!\$date\+\_\+match@{\$date\+\_\+match}}
+\index{\$date\+\_\+match@{\$date\+\_\+match}!single-\/matchs.\+php@{single-\/matchs.\+php}}
+\subsubsection{\texorpdfstring{\$date\+\_\+match}{$date\_match}}
+{\footnotesize\ttfamily \$date\+\_\+match = date\+\_\+i18n(\textquotesingle{} l d F \textquotesingle{}, strtotime(rwmb\+\_\+meta(\char`\"{}lbc\+\_\+date\char`\"{})))}
+
+
+
+Date du match. 
+
+Date du match au format jj/mm/aaaa \hypertarget{single-matchs_8php_ad6d756efb764174cfe7a6e9abc97e3eb}{}\label{single-matchs_8php_ad6d756efb764174cfe7a6e9abc97e3eb} 
+\index{single-\/matchs.\+php@{single-\/matchs.\+php}!\$terms@{\$terms}}
+\index{\$terms@{\$terms}!single-\/matchs.\+php@{single-\/matchs.\+php}}
+\subsubsection{\texorpdfstring{\$terms}{$terms}}
+{\footnotesize\ttfamily \$terms = get\+\_\+the\+\_\+terms(\$post-\/$>$ID, \textquotesingle{}categorie-\/equipe\textquotesingle{})}
+
+
+
+Récupère la taxonomie \char`\"{}catégorie-\/equipe\char`\"{}. 
+
+Récupère la taxonomie \char`\"{}categorie-\/equipe\char`\"{} et ressort la taxonomie (catégorie) du match. \hypertarget{single-matchs_8php_acef14cb9dd3a31dcc9b59c773f76807e}{}\label{single-matchs_8php_acef14cb9dd3a31dcc9b59c773f76807e} 
+\index{single-\/matchs.\+php@{single-\/matchs.\+php}!foreach@{foreach}}
+\index{foreach@{foreach}!single-\/matchs.\+php@{single-\/matchs.\+php}}
+\subsubsection{\texorpdfstring{foreach}{foreach}}
+{\footnotesize\ttfamily foreach( \$terms as \$term) ?$>$$<$ div class}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+=\textcolor{stringliteral}{"horaire"}>
+                <time datetime=\textcolor{stringliteral}{" <?php echo(rwmb\_meta("}lbc\_heure\textcolor{stringliteral}{")) ?>:00"}><?php echo(rwmb\_meta(\textcolor{stringliteral}{"lbc\_heure"}
+      ))
+\end{DoxyCode}
+
+
+Liste tout les terms d\textquotesingle{}une taxonomie. 
+
